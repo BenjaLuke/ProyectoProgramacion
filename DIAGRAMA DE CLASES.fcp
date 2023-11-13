@@ -462,7 +462,7 @@ Coordinador de Servicios al cliente</Text>
           <G>0</G>
           <B>0</B>
         </SwimLanesForeground>
-        <PageZoom>1,576764</PageZoom>
+        <PageZoom>2,5</PageZoom>
         <PageSelectedMenuItem>flowchart</PageSelectedMenuItem>
       </PageSetup>
       <SwimLanes />
@@ -569,9 +569,9 @@ Coordinador de Servicios al cliente</Text>
             <X>-45</X>
             <Y>-120</Y>
           </TextEndPoint>
-          <ClassText>pais_origen
-pais_destino</ClassText>
-          <ClassText2>CRUD</ClassText2>
+          <ClassText>- pais_origen
+- pais_destino</ClassText>
+          <ClassText2>+ CRUD</ClassText2>
           <ClassText3 />
           <ClassWizText />
           <ClassWizOprText />
@@ -625,8 +625,8 @@ pais_destino</ClassText>
             <X>-165</X>
             <Y>20</Y>
           </TextEndPoint>
-          <ClassText>puerto_origen
-puerto_destino</ClassText>
+          <ClassText>- puerto_origen
+- puerto_destino</ClassText>
           <ClassText2>---</ClassText2>
           <ClassText3 />
           <ClassWizText />
@@ -681,15 +681,15 @@ puerto_destino</ClassText>
             <X>215</X>
             <Y>20</Y>
           </TextEndPoint>
-          <ClassText>medio:1
-origen_1
-destino_1
-medio_2
-origen_2
-destino_2
-medio_3
-origen_3
-destino_3</ClassText>
+          <ClassText>- medio:1
+- origen_1
+- destino_1
+- medio_2
+- origen_2
+- destino_2
+- medio_3
+- origen_3
+- destino_3</ClassText>
           <ClassText2>---</ClassText2>
           <ClassText3 />
           <ClassWizText />
@@ -744,8 +744,8 @@ destino_3</ClassText>
             <X>85</X>
             <Y>20</Y>
           </TextEndPoint>
-          <ClassText>aeropuerto_origen
-aeropuerto_destino</ClassText>
+          <ClassText>- aeropuerto_origen
+- aeropuerto_destino</ClassText>
           <ClassText2>---</ClassText2>
           <ClassText3 />
           <ClassWizText />
@@ -800,8 +800,8 @@ aeropuerto_destino</ClassText>
             <X>-40</X>
             <Y>20</Y>
           </TextEndPoint>
-          <ClassText>estacion_origen
-estacion_destino</ClassText>
+          <ClassText>- estacion_origen
+- estacion_destino</ClassText>
           <ClassText2>---</ClassText2>
           <ClassText3 />
           <ClassWizText />
@@ -856,20 +856,20 @@ estacion_destino</ClassText>
             <X>255</X>
             <Y>-130</Y>
           </TextEndPoint>
-          <ClassText>descripcion
-naturaleza
-manipulacion
-almacenamiento
-manejo
-temperatura
-caducidad
-rastreabilidad
-dimensiones
-tipo_embalaje
-etiquetado
-valor_declarado
+          <ClassText>- descripcion
+- naturaleza
+- manipulacion
+- almacenamiento
+- manejo
+- temperatura
+- caducidad
+- rastreabilidad
+- dimensiones
+- tipo_embalaje
+- etiquetado
+- valor_declarado
 </ClassText>
-          <ClassText2>CRUD</ClassText2>
+          <ClassText2>+ CRUD</ClassText2>
           <ClassText3 />
           <ClassWizText />
           <ClassWizOprText />
@@ -981,18 +981,18 @@ Estandar</Text>
             <X>260</X>
             <Y>190</Y>
           </TextEndPoint>
-          <ClassText>numero_factura
-fecha_emision
-cliente
-servicios_factura
-importe_total
-metodo_pago
-estado_pago
-terminos_pago
-impuestos
-moneda
-notas</ClassText>
-          <ClassText2>CRUD</ClassText2>
+          <ClassText>- numero_factura
+- fecha_emision
+- cliente
+- servicios_factura
+- importe_total
+- metodo_pago
+- estado_pago
+- terminos_pago
+- impuestos
+- moneda
+- notas</ClassText>
+          <ClassText2>+ CRUD</ClassText2>
           <ClassText3 />
           <ClassWizText />
           <ClassWizOprText />
@@ -1447,7 +1447,7 @@ letra de cambio</Text>
       <FreeLineShapes />
       <ConnectedShapes>
         <ConnectedShapesRecord>
-          <ObjectID>3327935a79eb4db6b70164c850593e21</ObjectID>
+          <ObjectID>c29a699e3abb40ab99953c7b4f21f98a</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d67190461</ChildShapeId>
           <Text />
@@ -1514,7 +1514,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>72f23c29e4bf43239246e2f47af9a073</ObjectID>
+          <ObjectID>66c677f0e2d04619a9e3800fa2d0b066</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046164</ChildShapeId>
           <Text />
@@ -1581,7 +1581,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>595b28e916e74c289a9cf240d08f3209</ObjectID>
+          <ObjectID>ac81f0cc552244229ec29f97f51b3e6c</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046198</ChildShapeId>
           <Text />
@@ -1648,7 +1648,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>e802c32759294352bdffabca1a366327</ObjectID>
+          <ObjectID>8ec80a6f475746e7ad53ed510334f467</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046191</ChildShapeId>
           <Text />
@@ -1715,7 +1715,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>ae021cfada7949e08fd9fe1f53336c37</ObjectID>
+          <ObjectID>e6e0022e79d2419fb11afe28bd65bcfb</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046117</ChildShapeId>
           <Text />
@@ -1782,7 +1782,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>870fddd8a9784cc8ad4b2094ab0bb576</ObjectID>
+          <ObjectID>fdfcb06ef9bd4ff2b9c6684eace9b4fc</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046171</ChildShapeId>
           <Text />
@@ -1849,7 +1849,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>4c7e013c68b24db2949e269d73862b63</ObjectID>
+          <ObjectID>23e53b510a0a4584b79d78f1965ca22c</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d671904613</ChildShapeId>
           <Text />
