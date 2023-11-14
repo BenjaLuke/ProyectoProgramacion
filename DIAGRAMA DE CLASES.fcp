@@ -30,71 +30,11 @@
           <B>0</B>
         </SwimLanesForeground>
         <PageZoom>2,5</PageZoom>
-        <PageSelectedMenuItem>flowchart</PageSelectedMenuItem>
+        <PageSelectedMenuItem>uml</PageSelectedMenuItem>
       </PageSetup>
       <SwimLanes />
       <MultiSwimLanes />
       <Shapes>
-        <CanvasElement>
-          <ObjectID>4ba01062170f40269112bfb13b6398f4</ObjectID>
-          <GroupID />
-          <ShapeType>Process</ShapeType>
-          <ShapeEventType>Start</ShapeEventType>
-          <ShapeTaskLoop>None</ShapeTaskLoop>
-          <ShapeTaskBorder>Default</ShapeTaskBorder>
-          <IsCompensation>false</IsCompensation>
-          <IsSubProcess>false</IsSubProcess>
-          <IsAdHoc>false</IsAdHoc>
-          <Position>
-            <X>47</X>
-            <Y>27</Y>
-          </Position>
-          <Height>130</Height>
-          <Width>90</Width>
-          <Index>0</Index>
-          <Text>REGISTRO EN EL SISTEMA
-Control de usuarios
-C
-R
-U
-D</Text>
-          <TextFontSize>12.5</TextFontSize>
-          <TextFontWeight>
-            <Weight>400</Weight>
-          </TextFontWeight>
-          <TextHorizontalAlignment>Center</TextHorizontalAlignment>
-          <TextVerticalAlignment>Center</TextVerticalAlignment>
-          <Background>
-            <A>255</A>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-          </Background>
-          <Foreground>
-            <A>255</A>
-            <R>0</R>
-            <G>0</G>
-            <B>0</B>
-          </Foreground>
-          <BorderColor>
-            <A>255</A>
-            <R>0</R>
-            <G>0</G>
-            <B>0</B>
-          </BorderColor>
-          <TextEndPoint>
-            <X>-285</X>
-            <Y>-465</Y>
-          </TextEndPoint>
-          <ClassText />
-          <ClassText2 />
-          <ClassText3 />
-          <ClassWizText />
-          <ClassWizOprText />
-          <BorderType>Solid</BorderType>
-          <ShapeStrokeThickness>1</ShapeStrokeThickness>
-          <CornerRadius>0</CornerRadius>
-        </CanvasElement>
         <CanvasElement>
           <ObjectID>f6f8997fdad9410fa8e4fcf8b25bf551</ObjectID>
           <GroupID />
@@ -106,8 +46,8 @@ D</Text>
           <IsSubProcess>false</IsSubProcess>
           <IsAdHoc>false</IsAdHoc>
           <Position>
-            <X>127</X>
-            <Y>87</Y>
+            <X>17</X>
+            <Y>162</Y>
           </Position>
           <Height>20</Height>
           <Width>220</Width>
@@ -138,66 +78,8 @@ D</Text>
             <B>0</B>
           </BorderColor>
           <TextEndPoint>
-            <X>-205</X>
-            <Y>-405</Y>
-          </TextEndPoint>
-          <ClassText />
-          <ClassText2 />
-          <ClassText3 />
-          <ClassWizText />
-          <ClassWizOprText />
-          <BorderType>Solid</BorderType>
-          <ShapeStrokeThickness>1</ShapeStrokeThickness>
-          <CornerRadius>0</CornerRadius>
-        </CanvasElement>
-        <CanvasElement>
-          <ObjectID>f07c19c250f84f37af9eb1c09187ee9f</ObjectID>
-          <GroupID />
-          <ShapeType>AlternateProcess</ShapeType>
-          <ShapeEventType>Start</ShapeEventType>
-          <ShapeTaskLoop>None</ShapeTaskLoop>
-          <ShapeTaskBorder>Default</ShapeTaskBorder>
-          <IsCompensation>false</IsCompensation>
-          <IsSubProcess>false</IsSubProcess>
-          <IsAdHoc>false</IsAdHoc>
-          <Position>
-            <X>117</X>
-            <Y>127</Y>
-          </Position>
-          <Height>70</Height>
-          <Width>130</Width>
-          <Index>0</Index>
-          <Text>Nombre del usuario
-Apellido del usuario
-Cargo del usuario
-Acceso del usuario</Text>
-          <TextFontSize>12.5</TextFontSize>
-          <TextFontWeight>
-            <Weight>400</Weight>
-          </TextFontWeight>
-          <TextHorizontalAlignment>Left</TextHorizontalAlignment>
-          <TextVerticalAlignment>Center</TextVerticalAlignment>
-          <Background>
-            <A>255</A>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-          </Background>
-          <Foreground>
-            <A>255</A>
-            <R>0</R>
-            <G>0</G>
-            <B>0</B>
-          </Foreground>
-          <BorderColor>
-            <A>255</A>
-            <R>0</R>
-            <G>0</G>
-            <B>0</B>
-          </BorderColor>
-          <TextEndPoint>
-            <X>-145</X>
-            <Y>-185</Y>
+            <X>-315</X>
+            <Y>-330</Y>
           </TextEndPoint>
           <ClassText />
           <ClassText2 />
@@ -219,8 +101,8 @@ Acceso del usuario</Text>
           <IsSubProcess>false</IsSubProcess>
           <IsAdHoc>false</IsAdHoc>
           <Position>
-            <X>92</X>
-            <Y>192</Y>
+            <X>162</X>
+            <Y>112</Y>
           </Position>
           <Height>40</Height>
           <Width>80</Width>
@@ -252,8 +134,8 @@ Raso</Text>
             <B>0</B>
           </BorderColor>
           <TextEndPoint>
-            <X>-180</X>
-            <Y>10</Y>
+            <X>-110</X>
+            <Y>-70</Y>
           </TextEndPoint>
           <ClassText />
           <ClassText2 />
@@ -275,8 +157,8 @@ Raso</Text>
           <IsSubProcess>false</IsSubProcess>
           <IsAdHoc>false</IsAdHoc>
           <Position>
-            <X>242</X>
-            <Y>157</Y>
+            <X>267</X>
+            <Y>72</Y>
           </Position>
           <Height>160</Height>
           <Width>190</Width>
@@ -317,11 +199,69 @@ Coordinador de Servicios al cliente</Text>
             <B>0</B>
           </BorderColor>
           <TextEndPoint>
-            <X>-30</X>
-            <Y>-25</Y>
+            <X>-5</X>
+            <Y>-110</Y>
           </TextEndPoint>
           <ClassText />
           <ClassText2 />
+          <ClassText3 />
+          <ClassWizText />
+          <ClassWizOprText />
+          <BorderType>Solid</BorderType>
+          <ShapeStrokeThickness>1</ShapeStrokeThickness>
+          <CornerRadius>0</CornerRadius>
+        </CanvasElement>
+        <CanvasElement>
+          <ObjectID>3d5cf997a00d417597cf5bbf1abb2609</ObjectID>
+          <GroupID />
+          <ShapeType>ClassBorder2</ShapeType>
+          <ShapeEventType>Start</ShapeEventType>
+          <ShapeTaskLoop>None</ShapeTaskLoop>
+          <ShapeTaskBorder>Default</ShapeTaskBorder>
+          <IsCompensation>false</IsCompensation>
+          <IsSubProcess>false</IsSubProcess>
+          <IsAdHoc>false</IsAdHoc>
+          <Position>
+            <X>2</X>
+            <Y>17</Y>
+          </Position>
+          <Height>110</Height>
+          <Width>150</Width>
+          <Index>-5</Index>
+          <Text>REGISTRO EN EL SISTEMA</Text>
+          <TextFontSize>12.5</TextFontSize>
+          <TextFontWeight>
+            <Weight>400</Weight>
+          </TextFontWeight>
+          <TextHorizontalAlignment>Left</TextHorizontalAlignment>
+          <TextVerticalAlignment>Top</TextVerticalAlignment>
+          <Background>
+            <A>255</A>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+          </Background>
+          <Foreground>
+            <A>255</A>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+          </Foreground>
+          <BorderColor>
+            <A>255</A>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+          </BorderColor>
+          <TextEndPoint>
+            <X>-240</X>
+            <Y>-115</Y>
+          </TextEndPoint>
+          <ClassText>- nombre_usuario
+- apellido_usuario
+- cargo_usuario
+-acceso_usuario</ClassText>
+          <ClassText2>CRUD</ClassText2>
           <ClassText3 />
           <ClassWizText />
           <ClassWizOprText />
@@ -334,12 +274,12 @@ Coordinador de Servicios al cliente</Text>
         <CanvasLineElement>
           <ObjectID>ab4b836a3de34ca482c5913a46916733</ObjectID>
           <LineStartPosition>
-            <X>104.18622589111328</X>
-            <Y>106.62726593017578</Y>
+            <X>97.791244506835938</X>
+            <Y>113.43043518066406</Y>
           </LineStartPosition>
           <LineEndPosition>
-            <X>123.05382537841797</X>
-            <Y>106.39303588867188</Y>
+            <X>271.45361328125</X>
+            <Y>113.99746704101563</Y>
           </LineEndPosition>
           <Text />
           <LineColor>
@@ -365,12 +305,12 @@ Coordinador de Servicios al cliente</Text>
         <CanvasLineElement>
           <ObjectID>e827e9377c1242e095339afaabd66ba0</ObjectID>
           <LineStartPosition>
-            <X>221.59693908691406</X>
-            <Y>177.22792053222656</Y>
+            <X>99.201370239257812</X>
+            <Y>128.83743286132813</Y>
           </LineStartPosition>
           <LineEndPosition>
-            <X>247.64564514160156</X>
-            <Y>177.40191650390625</Y>
+            <X>168.45761108398438</X>
+            <Y>129.81269836425781</Y>
           </LineEndPosition>
           <Text />
           <LineColor>
@@ -398,16 +338,16 @@ Coordinador de Servicios al cliente</Text>
         <CanvasLineCurvedElement>
           <ObjectID>7044dfb9d4fe4c978d2ae6653ec9b7bb</ObjectID>
           <LineStartPosition>
-            <X>226.59500122070313</X>
-            <Y>193.3988037109375</Y>
+            <X>46.189697265625</X>
+            <Y>157.00953674316406</Y>
           </LineStartPosition>
           <LineMidPosition>
-            <X>235.99687194824219</X>
-            <Y>217.3948974609375</Y>
+            <X>95.201606750488281</X>
+            <Y>145.81101989746094</Y>
           </LineMidPosition>
           <LineEndPosition>
-            <X>180.99613952636719</X>
-            <Y>213.79331970214844</Y>
+            <X>93.8096923828125</X>
+            <Y>168.18222045898438</Y>
           </LineEndPosition>
           <LineWidth>1</LineWidth>
           <Text />
