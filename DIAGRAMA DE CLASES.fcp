@@ -260,8 +260,8 @@ Coordinador de Servicios al cliente</Text>
           <ClassText>- nombre_usuario
 - apellido_usuario
 - cargo_usuario
--acceso_usuario</ClassText>
-          <ClassText2>CRUD</ClassText2>
+- acceso_usuario</ClassText>
+          <ClassText2>+ CRUD</ClassText2>
           <ClassText3 />
           <ClassWizText />
           <ClassWizOprText />
@@ -1387,7 +1387,7 @@ letra de cambio</Text>
       <FreeLineShapes />
       <ConnectedShapes>
         <ConnectedShapesRecord>
-          <ObjectID>c29a699e3abb40ab99953c7b4f21f98a</ObjectID>
+          <ObjectID>6fb32d5bc9bb45e288a9d6cbc9267ed5</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d67190461</ChildShapeId>
           <Text />
@@ -1454,7 +1454,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>66c677f0e2d04619a9e3800fa2d0b066</ObjectID>
+          <ObjectID>1ecb5814a20c45499087efdb5c8ad08d</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046164</ChildShapeId>
           <Text />
@@ -1521,7 +1521,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>ac81f0cc552244229ec29f97f51b3e6c</ObjectID>
+          <ObjectID>8b9c4c447da74fbb9298e257925d6396</ObjectID>
           <ParentShapeId>e7c1f8593b5a417f85b762f9d609521c</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046198</ChildShapeId>
           <Text />
@@ -1588,7 +1588,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>8ec80a6f475746e7ad53ed510334f467</ObjectID>
+          <ObjectID>258bde45e19e4ca4a5487c90840961a4</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046191</ChildShapeId>
           <Text />
@@ -1655,7 +1655,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>e6e0022e79d2419fb11afe28bd65bcfb</ObjectID>
+          <ObjectID>50ad5766d8a043fba32f84a06d87a9c3</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046117</ChildShapeId>
           <Text />
@@ -1722,7 +1722,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>fdfcb06ef9bd4ff2b9c6684eace9b4fc</ObjectID>
+          <ObjectID>2846635dbd8b4d2a8b9c83183a11772b</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d6719046171</ChildShapeId>
           <Text />
@@ -1789,7 +1789,7 @@ letra de cambio</Text>
           <LineStrokeThickness>1</LineStrokeThickness>
         </ConnectedShapesRecord>
         <ConnectedShapesRecord>
-          <ObjectID>23e53b510a0a4584b79d78f1965ca22c</ObjectID>
+          <ObjectID>d527206f3dd74259beb28965ca4b460f</ObjectID>
           <ParentShapeId>8522b4b4a73f4a29ab27550d67190461</ParentShapeId>
           <ChildShapeId>8522b4b4a73f4a29ab27550d671904613</ChildShapeId>
           <Text />
