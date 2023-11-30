@@ -1,0 +1,54 @@
+@startuml
+class Usuario {
+  -nombre
+  -clave
+  -tipoUsuario
+  -teléfono
+  -email
+}
+
+class Operación {
+  -tipoRuta
+  -detallesRuta
+  -detallesEmpa
+  -detallesFact
+  +asignarTipoRuta()
+}
+
+class Ruta {
+  -tipoRuta
+  -puertos...
+  -fechas...
+}
+
+interface Empaquetable {
+  +empaquetar()
+}
+
+class Empaquetado {
+  -numContenedores
+  -peso
+  -tamaño
+}
+
+interface Facturable {
+  -precioFinal
+  -conceptos
+  -IVA
+  +validarDatos()
+}
+
+class Facturación {
+  -precioFinal
+  -conceptos
+  -IVA
+  +validarDatos()
+}
+
+Usuario --|> Operación
+Operación --|> Ruta
+Operación ..|> Empaquetable
+Empaquetado --|> Empaquetable
+Operación ..|> Facturable
+Facturación --|> Facturable
+@enduml

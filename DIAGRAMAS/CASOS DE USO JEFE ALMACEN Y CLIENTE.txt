@@ -1,0 +1,133 @@
+@startuml
+left to right direction
+
+rectangle Interno{
+actor "Administrador" as act_1
+actor "Coordinador de rutas" as act_2
+actor "Contable" as act_3
+actor "Jefe de almacén" as act_4
+}
+
+
+rectangle Entorno{
+useCase "Visualizar Operaciones de Entrada y Salida" as (Use_1)
+useCase "Actualizar Estado de Productos" as (Use_2)
+useCase "Generar informes de Inventario" as (Use_3)
+useCase "Coordinar Recepción de Mercancías" as (Use_4)
+useCase "Consultar Estado de Envíos" as (Use_5)
+useCase "Realizar Pedidos" as (Use_6)
+useCase "Visualizar Facturas y Detalles de Facturación" as (Use_7)
+useCase "Solicitar Cambios en Pedidos" as (Use_8)
+
+}
+
+note right of (Use_1)
+  El JEFE DE ALMACÉN accede al sistema.
+  Selecciona la opción para visualizar operaciones de entrada y salida.
+  El sistema muestra una lista de operaciones con detalles relevantes (productos, cantidades, fechas).
+end note
+
+note right of (Use_2)
+El JEFE DE ALMACÉN accede al sistema.
+Selecciona la opción para gestionar el estado de productos.
+Modifica el estado de productos según sea necesario.
+El sistema actualiza la información de estado.
+end note
+
+note right of (Use_3)
+El JEFE DE ALMACÉN accede al sistema.
+Selecciona la opción para generar informes de inventario.
+Especifica los parámetros del informe (rango de fechas, categorías de productos, etc.).
+El sistema genera un informe detallado.
+end note
+
+note right of (Use_4)
+El JEFE DE ALMACÉN accede al sistema.
+Selecciona la opción para coordinar la recepción de mercancía.
+Ingresa los detalles de la mercancía recibida (número de contenedores, tipo de productos, cantidades).
+El sistema actualiza la información de inventario.
+end note
+
+note right of (Use_5)
+El CLIENTE accede al sistema.
+Selecciona la opción para consultar el estado de envíos.
+Ingresa detalles específicos (número de seguimiento, fechas, etc.).
+El sistema muestra la información actualizada sobre el estado y la ubicación de los envíos.
+end note
+
+note right of (Use_6)
+El CLIENTE accede al sistema.
+Selecciona la opción para realizar pedidos.
+Explora catálogos de productos y agrega productos al carrito.
+Confirma el pedido y proporciona detalles como dirección de entrega y preferencias.
+El sistema registra el nuevo pedido y notifica al CLIENTE sobre la confirmación.
+end note
+
+note right of (Use_7)
+El CLIENTE accede al sistema.
+Selecciona la opción para visualizar facturas.
+Examina las facturas anteriores y revisa los detalles de cada transacción.
+end note
+
+note right of (Use_8)
+El CLIENTE accede al sistema.
+Selecciona la opción para gestionar pedidos.
+Elige el pedido que desea modificar y solicita los cambios necesarios.
+El sistema actualiza la información del pedido según la solicitud del CLIENTE.
+end note
+
+act_4 ------> Use_1
+act_4 ------> Use_2
+act_4 ------> Use_3
+act_4 ------> Use_4
+
+rectangle Externo{
+actor "cliente" as act_5
+
+}
+
+act_5 ------> Use_5
+act_5 ------> Use_6
+act_5 ------> Use_7
+act_5 ------> Use_8
+
+@enduml
+
+
+El siguiente código evita los comentarios pero añade algunas cosas comunes con el administrador:
+
+@startuml
+left to right direction
+
+actor "ADMINISTRADOR" as Admin
+actor "COORDINADOR DE RUTAS" as Coordinador
+actor "CONTABLE" as Contable
+actor "JEFE DE ALMACÉN" as JefeAlmacen
+actor "CLIENTE" as Cliente
+
+rectangle "Sistema de Logística" {
+  usecase "Visualizar Operaciones de Entrada y Salida" as UCO1
+  usecase "Actualizar Estado de Productos" as UCO2
+  usecase "Generar Informes de Inventario" as UCO3
+  usecase "Coordinar Recepción de Mercancía" as UCO4
+
+  usecase "Consultar Estado de Envíos" as UCC1
+  usecase "Realizar Pedidos" as UCC2
+  usecase "Visualizar Facturas y Detalles de Facturación" as UCC3
+  usecase "Solicitar Cambios en Pedidos" as UCC4
+
+  Admin --> UCO1
+  JefeAlmacen --> UCO1
+  Admin --> UCO2
+  JefeAlmacen --> UCO2
+  Admin --> UCO3
+  JefeAlmacen --> UCO3
+  JefeAlmacen --> UCO4
+
+  Cliente --> UCC1
+  Cliente --> UCC2
+  Cliente --> UCC3
+  Cliente --> UCC4
+}
+
+@enduml
