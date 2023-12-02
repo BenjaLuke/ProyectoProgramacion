@@ -1,0 +1,42 @@
+@staruml
+left to right direction
+
+actor Coordinador as Coordinador
+
+usecase "Crear nueva ruta" as Crear
+usecase "Eliminar ruta existente" as Eliminar
+usecase "Modificar detalles de ruta" as Modificar
+usecase "Consultar información de ruta" as Consultar
+usecase "Calcular tiempo estimado de llegada" as CalcularTiempo
+usecase "Calcular costo total estimado de ruta" as CalcularCostoRuta
+
+Coordinador --> Crear
+Coordinador --> Eliminar
+Coordinador --> Modificar
+Coordinador --> Consultar
+Coordinador --> CalcularTiempo
+Coordinador --> CalcularCostoRuta
+
+rectangle "Gestión de Rutas" {
+  (Crear) --> (Ingresar Datos)
+  (Ingresar Datos) --> (Verificar Ruta)
+  (Verificar Ruta) --> (Registrar Ruta)
+
+  (Eliminar) --> (Seleccionar Ruta a Eliminar)
+  (Seleccionar Ruta a Eliminar) --> (Eliminar Seleccionada)
+  (Eliminar Seleccionada) --> (Confirmar Acción)
+
+  (Modificar) --> (Seleccionar Ruta a Modificar)
+  (Seleccionar Ruta a Modificar) --> (Modificar Detalles)
+  (Modificar Detalles) --> (Guardar Cambios)
+
+  (Consultar) --> (Seleccionar Ruta a Consultar)
+  (Seleccionar Ruta a Consultar) --> (Mostrar Detalles)
+
+  (CalcularTiempo) --> (Ingresar Detalles Ruta)
+  (Ingresar Detalles Ruta) --> (Obtener Tiempo Estimado)
+
+  (CalcularCostoRuta) --> (Seleccionar Ruta a CalcularCosto)
+  (Seleccionar Ruta a CalcularCosto) --> (Obtener Costo Estimado)
+}
+@enduml
