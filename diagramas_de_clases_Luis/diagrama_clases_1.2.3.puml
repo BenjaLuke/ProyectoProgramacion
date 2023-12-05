@@ -1,0 +1,119 @@
+@startuml
+
+
+class Usuario implements GestorDatos{
+    - id: int
+    - nombre: String
+    - clave: String
+    - tipoUsuario: String
+    - telefono: String
+    - email: String
+    
+    + getDatosUsuario(): String
+    + setDatosUsuario(datos: String): void
+    
+}
+
+
+
+class Operacion implements GestorDatos{
+    
+    - id_operacion: int    
+    
+    + getOperacion(): int
+    + setOperacion(id: int): void
+}
+
+class Ruta implements Trayecto, GestorDatos{
+    - id_ruta: int
+    - tipoRuta: String
+    - puertoOrigen: String
+    - puertoDestino: String
+    - fechaSalida: date
+    - fechaLlegada: date
+    - costeRuta: int
+    
+    + agregarTrayecto(): String()
+    
+}
+
+
+
+class RutaTerrestre extends Ruta {
+    - tipoTerreno: String
+    - numeroPeajes: int
+    - estadoCarreteras: String
+    
+    + getRutaTerrestre(): String
+    + setRutaTerrestre(): String
+  
+}
+
+class RutaMaritima extends Ruta {
+    - profundidadAgua: double
+    - condicionesMar: String
+    - puertosIntermedios: String[]
+    
+    + getRutaMaritima(): String
+    + setRutaMaritima(): String
+    
+}
+
+class RutaAerea extends Ruta {
+    - rutasVuelo: String[]
+    - altitudVuelo: double
+    - condicionesAtmosfericas: String
+    
+    + getRutaAereo(): String
+    + setRutaAereo(): String
+    
+}
+
+class Empaquetado implements GestorDatos{
+    - numeroContenedores: int
+    - peso: double
+    - tamano: double
+    
+    + getDatosContenedores(): int
+    + setDatosContenedores(datoContenedores: String): void
+    
+}
+
+class Facturacion implements GestorDatos{
+    - codigo: String
+    - fecha: String
+    - hora: String
+    - tipo: String
+    - matricula: String
+    - nombre: String
+    - dni: String
+    - concepto: String
+    - importe: double
+    - estado: String
+    
+    + getDatosFacturacion(): String
+    + setDatosFacturacion(datos: String): void
+    
+}
+
+interface GestorDatos {
+    + getDatos(): String
+    + setDatos(datos: String): void
+}
+
+interface Trayecto {
+    + getTrayecto(): String
+    + setTrayecto(trayecto: String): void
+}
+
+
+
+
+Usuario --|> Operacion
+Operacion <|-- Ruta
+Operacion <|-- Empaquetado
+Operacion <|-- Facturacion
+
+
+
+@enduml
