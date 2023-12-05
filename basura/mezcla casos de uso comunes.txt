@@ -1,0 +1,92 @@
+@startuml
+
+left to right direction
+
+package Actores_internos{
+actor "Administrador" as act_1
+actor "Coordinador de rutas" as act_2
+actor "Contable" as act_3
+actor "Jefe de almacén" as act_4
+}
+
+
+rectangle Entorno{
+
+useCase "Generar ruta"
+useCase "ingresar datos de ruta"
+useCase "verificar ruta"
+useCase "confirmar ruta"
+
+
+useCase "Modificar ruta"
+useCase "Seleccionar ruta"
+useCase "Eliminar ruta"
+useCase "Consultar ruta" 
+useCase "Modificar ruta seleccionada"
+
+useCase "Generar empaquetado" as (Use_1)
+useCase "Ingresar productos al empaquetado" as (Use_2)
+useCase "verificar empaquetado" as (Use_3)
+useCase "confirmar empaquetado" as (Use_4)
+
+
+useCase "Modificar empaquetado" as (Use_5)
+useCase "Seleccionar empaquetado" as (Use_6)
+useCase "Seleccionar producto del empaquetado" as (Use_7)
+useCase "Modificar producto del empaquetado" as (Use_8)
+
+
+useCase "Eliminar empaquetado" as (Use_9)
+useCase "Confirmar eliminación" as (Use_11)
+
+
+useCase "Consultar empaquetado" as (Use_12)
+
+Use_1 --> Use_2
+Use_2 --> Use_3
+Use_2 ----> Use_2
+Use_3 --> Use_4
+
+Use_5 --> Use_6
+Use_6 --> Use_7
+Use_7 --> Use_8
+Use_8 --> Use_4
+Use_9 --> Use_6
+Use_6 --> Use_11
+
+Use_12 --> Use_6
+}
+
+
+
+act_4 ------> Use_1
+act_4 ------> Use_5
+act_4 ------> Use_9
+act_4 ------> Use_12
+
+act_2 ------> "Generar ruta"
+act_2 ------> "Modificar ruta"
+act_2 ------> "Eliminar ruta"
+act_2 ------> "Consultar ruta" 
+
+"Generar ruta" --> "ingresar datos de ruta"
+"ingresar datos de ruta" --> "verificar ruta"
+ "verificar ruta" --> "confirmar ruta"
+
+"Consultar ruta" --> "Seleccionar ruta"
+"Eliminar ruta" --> "Seleccionar ruta"
+"Modificar ruta" --> "Seleccionar ruta"
+"Seleccionar ruta" --> Use_11
+"Seleccionar ruta" --> "Modificar ruta seleccionada"
+"Modificar ruta seleccionada" --> "confirmar ruta"
+
+
+package Actores_externos{
+actor "cliente" as act_5
+
+}
+
+act_5 ------> Use_12
+act_5 ------> "Consultar ruta"
+
+@enduml

@@ -1,0 +1,118 @@
+@startuml
+
+left to right direction
+
+package Actores_internos{
+actor "Administrador" as act_1
+actor "Coordinador de rutas" as act_2
+actor "Contable" as act_3
+actor "Jefe de almacén" as act_4
+}
+
+
+rectangle Entorno{
+
+useCase "Generar ruta" as (Generar_ruta)
+useCase "ingresar datos de ruta" as (ingresar_datos_ruta)
+useCase "verificar ruta" as (verificar_ruta)
+
+
+useCase "Modificar ruta" as (Modificar_ruta)
+useCase "Seleccionar ruta" as (Seleccionar_ruta)
+useCase "Eliminar ruta" as (Eliminar_ruta)
+useCase "Consultar ruta"  as (Consultar_ruta)
+useCase "Modificar ruta seleccionada" as (Modificar_ruta_seleccionada)
+
+useCase "Generar factura" as (Generar_factura)
+useCase "Ingresar datos factura" as (Ingresar_datos_factura)
+
+useCase "Modificar factura" as (Modificar_factura)
+useCase "Seleccionar factura" as (Seleccionar_factura)
+
+useCase "Eliminar factura" as (Eliminar_factura)
+
+
+useCase "Consultar factura" as (Consultar_factura)
+useCase "Modificar factura seleccionada" as (Modificar_factura_seleccionada)
+
+useCase "Generar empaquetado" as (Use_1)
+useCase "Ingresar productos al empaquetado" as (Use_2)
+useCase "verificar empaquetado" as (Use_3)
+useCase "confirmar operación" as (Use_4)
+
+
+useCase "Modificar empaquetado" as (Use_5)
+useCase "Seleccionar empaquetado" as (Use_6)
+useCase "Seleccionar producto del empaquetado" as (Use_7)
+useCase "Modificar producto del empaquetado" as (Use_8)
+
+
+useCase "Eliminar empaquetado" as (Use_9)
+useCase "Confirmar eliminación" as (Use_11)
+
+
+useCase "Consultar empaquetado" as (Use_12)
+
+Use_1 --> Use_2
+Use_2 --> Use_3
+Use_2 ----> Use_2
+Use_3 -----> Use_4
+
+Use_5 --> Use_6
+Use_6 --> Use_7
+Use_7 --> Use_8
+Use_8 -----> Use_4
+Use_9 --> Use_6
+Use_6 --> Use_11
+
+Use_12 --> Use_6
+}
+
+
+
+act_4 ------> Use_1
+act_4 ------> Use_5
+act_4 ------> Use_9
+act_4 ------> Use_12
+
+act_2 ------> Generar_ruta
+act_2 ------>   Modificar_ruta
+act_2 ------>   Eliminar_ruta
+act_2 ------>   Consultar_ruta
+
+act_3 ------>   Generar_factura
+act_3 ------>   Modificar_factura
+act_3 ------>   Eliminar_factura
+act_3 ------>   Consultar_factura
+
+Generar_ruta --> ingresar_datos_ruta
+ingresar_datos_ruta --> verificar_ruta
+verificar_ruta -----> Use_4
+
+Consultar_ruta --> Seleccionar_ruta
+Eliminar_ruta --> Seleccionar_ruta
+Modificar_ruta --> Seleccionar_ruta
+Seleccionar_ruta --> Use_11
+Seleccionar_ruta --> Modificar_ruta_seleccionada
+Modificar_ruta_seleccionada -----> Use_4
+
+Generar_factura -----> Ingresar_datos_factura
+Ingresar_datos_factura --> Use_4
+Modificar_factura --> Seleccionar_factura
+Eliminar_factura --> Seleccionar_factura
+Seleccionar_factura --> Use_11
+Consultar_factura --> Seleccionar_factura
+Seleccionar_factura --> Modificar_factura_seleccionada
+Modificar_factura_seleccionada -----> Use_4
+
+package Actores_externos{
+actor "cliente" as act_5
+
+}
+
+act_5 --------> Consultar_factura
+act_5 --------> Use_12
+act_5 --------> Consultar_ruta
+
+
+@enduml
