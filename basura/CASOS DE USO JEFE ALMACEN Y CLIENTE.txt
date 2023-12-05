@@ -27,7 +27,7 @@ useCase "Seleccionar empaquetado" as (Generar_empaquetado0)
 useCase "Confirmar eliminación" as (Generar_empaquetado1)
 
 
-useCase "Consultar empaquetado" as (Generar_empaquetado2)
+useCase "Consultar empaquetado" as (Consultar_empaquetado)
 useCase "Seleccionar empaquetado" as (Generar_empaquetado3)
 
 
@@ -44,7 +44,7 @@ Modificar_producto_de_empaquetado --> Confirmar_operacion
 Eliminar_empaquetado --> Generar_empaquetado0
 Generar_empaquetado0 --> Generar_empaquetado1
 
-Generar_empaquetado2 --> Generar_empaquetado3
+Consultar_empaquetado --> Generar_empaquetado3
 
 }
 
@@ -53,7 +53,7 @@ Generar_empaquetado2 --> Generar_empaquetado3
 act_4 ------> Generar_empaquetado
 act_4 ------> Modificar_empaquetado
 act_4 ------> Eliminar_empaquetado
-act_4 ------> Generar_empaquetado2
+act_4 ------> Consultar_empaquetado
 
 
 rectangle Externo{
@@ -61,6 +61,6 @@ actor "cliente" as act_5
 
 }
 
-act_5 ------> Generar_empaquetado2
+act_5 ------> Consultar_empaquetado
 
 @enduml
