@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+
+actor Contable as Contable
+
+rectangle "Gestión de Facturación" {
+  Contable -- (Generar Factura)
+  (Generar Factura) --> (Ingresar Detalles)
+  (Ingresar Detalles) --> (Verificar Detalles)
+  (Verificar Detalles) --> (Confirmar Factura)
+
+  Contable -- (Modificar Detalles de Factura)
+  (Modificar Detalles de Factura) --> (Seleccionar Factura a Modificar)
+  (Seleccionar Factura a Modificar) --> (Modificar Detalles Modificados)
+  (Modificar Detalles Modificados) --> (Guardar Cambios)
+
+  Contable -- (Eliminar Factura)
+  (Eliminar Factura) --> (Seleccionar Factura a Eliminar)
+  (Seleccionar Factura a Eliminar) --> (Verificar Eliminación)
+  (Verificar Eliminación) --> (Confirmar Eliminación)
+
+  Contable -- (Consultar Factura)
+  (Consultar Factura) --> (Acceder a Consultar Factura)
+  (Acceder a Consultar Factura) --> (Seleccionar Factura a Consultar)
+  (Seleccionar Factura a Consultar) --> (Mostrar Detalles)
+
+  Contable -- (Registrar Pago)
+  (Registrar Pago) --> (Seleccionar Factura)
+  (Seleccionar Factura) --> (Ingresar Detalles Pago)
+  (Ingresar Detalles Pago) --> (Confirmar Pago)
+  (Confirmar Pago) --> (Actualizar Estado Pago)
+}
+rectangle "Sistema" {
+  (Ingresar Detalles)
+  (Verificar Detalles)
+  (Confirmar Factura)
+
+  (Seleccionar Factura a Modificar)
+  (Modificar Detalles Modificados)
+  (Guardar Cambios)
+
+  (Seleccionar Factura a Eliminar)
+  (Verificar Eliminación)
+  (Confirmar Eliminación)
+
+  (Acceder a Consultar Factura)
+  (Seleccionar Factura a Consultar)
+  (Mostrar Detalles)
+
+  (Seleccionar Factura)
+  (Ingresar Detalles Pago)
+  (Confirmar Pago)
+  (Actualizar Estado Pago)
+}
+@enduml
