@@ -3,16 +3,16 @@
 left to right direction
 
 package Actores_internos{
-actor "Administrador" as act_1
-actor "Coordinador de rutas" as act_2
-actor "Contable" as act_3
-actor "Jefe de almacén" as act_4
+actor "Administrador"           as act_1
+actor "Coordinador de rutas"    as act_2
+actor "Contable"                as act_3
+actor "Jefe de almacén"         as act_4
 }
 
 
 rectangle Entorno{
 
-useCase "Generar ruta" as (Generar_ruta)
+useCase "Generar ruta"  as (Generar_ruta)
 useCase "ingresar datos de ruta" as (ingresar_datos_ruta)
 useCase "verificar ruta" as (verificar_ruta)
 
@@ -35,45 +35,45 @@ useCase "Eliminar factura" as (Eliminar_factura)
 useCase "Consultar factura" as (Consultar_factura)
 useCase "Modificar factura seleccionada" as (Modificar_factura_seleccionada)
 
-useCase "Generar empaquetado" as (Use_1)
-useCase "Ingresar productos al empaquetado" as (Use_2)
-useCase "verificar empaquetado" as (Use_3)
-useCase "confirmar operación" as (Use_4)
+useCase "Generar empaquetado" as (Generar_empaquetado)
+useCase "Ingresar productos al empaquetado" as (Ingresar_producto_al_empaquetado)
+useCase "verificar empaquetado" as (Verificar_empaquetado)
+useCase "confirmar operación" as (Confirmar_operacion)
 
 
-useCase "Modificar empaquetado" as (Use_5)
-useCase "Seleccionar empaquetado" as (Use_6)
-useCase "Seleccionar producto del empaquetado" as (Use_7)
-useCase "Modificar producto del empaquetado" as (Use_8)
+useCase "Modificar empaquetado" as (Modificar_empaquetado)
+useCase "Seleccionar empaquetado" as (Seleccionar_empaquetado)
+useCase "Seleccionar producto del empaquetado" as (Seleccionar_producto_de_empaquetado)
+useCase "Modificar producto del empaquetado" as (Modificar_producto_de_empaquetado)
 
 
-useCase "Eliminar empaquetado" as (Use_9)
-useCase "Confirmar eliminación" as (Use_11)
+useCase "Eliminar empaquetado" as (Eliminar_empaquetado)
+useCase "Confirmar eliminación" as (Generar_empaquetado1)
 
 
-useCase "Consultar empaquetado" as (Use_12)
+useCase "Consultar empaquetado" as (Generar_empaquetado2)
 
-Use_1 --> Use_2
-Use_2 --> Use_3
-Use_2 ----> Use_2
-Use_3 -----> Use_4
+Generar_empaquetado --> Ingresar_producto_al_empaquetado
+Ingresar_producto_al_empaquetado --> Verificar_empaquetado
+Ingresar_producto_al_empaquetado ----> Ingresar_producto_al_empaquetado
+Verificar_empaquetado -----> Confirmar_operacion
 
-Use_5 --> Use_6
-Use_6 --> Use_7
-Use_7 --> Use_8
-Use_8 -----> Use_4
-Use_9 --> Use_6
-Use_6 --> Use_11
+Modificar_empaquetado --> Seleccionar_empaquetado
+Seleccionar_empaquetado --> Seleccionar_producto_de_empaquetado
+Seleccionar_producto_de_empaquetado --> Modificar_producto_de_empaquetado
+Modificar_producto_de_empaquetado -----> Confirmar_operacion
+Eliminar_empaquetado --> Seleccionar_empaquetado
+Seleccionar_empaquetado --> Generar_empaquetado1
 
-Use_12 --> Use_6
+Generar_empaquetado2 --> Seleccionar_empaquetado
 }
 
 
 
-act_4 ------> Use_1
-act_4 ------> Use_5
-act_4 ------> Use_9
-act_4 ------> Use_12
+act_4 ------> Generar_empaquetado
+act_4 ------> Modificar_empaquetado
+act_4 ------> Eliminar_empaquetado
+act_4 ------> Generar_empaquetado2
 
 act_2 ------> Generar_ruta
 act_2 ------>   Modificar_ruta
@@ -87,23 +87,23 @@ act_3 ------>   Consultar_factura
 
 Generar_ruta --> ingresar_datos_ruta
 ingresar_datos_ruta --> verificar_ruta
-verificar_ruta -----> Use_4
+verificar_ruta -----> Confirmar_operacion
 
 Consultar_ruta --> Seleccionar_ruta
 Eliminar_ruta --> Seleccionar_ruta
 Modificar_ruta --> Seleccionar_ruta
-Seleccionar_ruta --> Use_11
+Seleccionar_ruta --> Generar_empaquetado1
 Seleccionar_ruta --> Modificar_ruta_seleccionada
-Modificar_ruta_seleccionada -----> Use_4
+Modificar_ruta_seleccionada -----> Confirmar_operacion
 
 Generar_factura -----> Ingresar_datos_factura
-Ingresar_datos_factura --> Use_4
+Ingresar_datos_factura --> Confirmar_operacion
 Modificar_factura --> Seleccionar_factura
 Eliminar_factura --> Seleccionar_factura
-Seleccionar_factura --> Use_11
+Seleccionar_factura --> Generar_empaquetado1
 Consultar_factura --> Seleccionar_factura
 Seleccionar_factura --> Modificar_factura_seleccionada
-Modificar_factura_seleccionada -----> Use_4
+Modificar_factura_seleccionada -----> Confirmar_operacion
 
 package Actores_externos{
 actor "cliente" as act_5
@@ -111,7 +111,7 @@ actor "cliente" as act_5
 }
 
 act_5 --------> Consultar_factura
-act_5 --------> Use_12
+act_5 --------> Generar_empaquetado2
 act_5 --------> Consultar_ruta
 
 
