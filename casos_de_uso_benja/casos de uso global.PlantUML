@@ -9,9 +9,16 @@ actor "Contable"                as act_3
 actor "Jefe de almacén"         as act_4
 }
 
+rectangle Seguridad{
+useCase "Identificarse" as (Identificarse)
+useCase "Introducir usuario" as (Introducir_usuario)
+useCase "Consultar usuario" as (Consultar_usuario)
+useCase "Modificar usuario" as (Modificar_usuario)
+useCase "Eliminar usuario" as (Eliminar_usuario)
+}
 
 rectangle Entorno{
-
+    
 useCase "Generar ruta"  as (Generar_ruta)
 useCase "ingresar datos de ruta" as (ingresar_datos_ruta)
 useCase "verificar ruta" as (verificar_ruta)
@@ -68,33 +75,32 @@ Seleccionar_empaquetado --> Generar_empaquetado1
 Consultar_empaquetado --> Seleccionar_empaquetado
 }
 
-act_1 ------> Generar_ruta
-act_1 ------> Modificar_ruta
-act_1 ------> Eliminar_ruta
-act_1 ------> Consultar_ruta
-act_1 ------> Generar_factura
-act_1 ------> Modificar_factura
-act_1 ------> Eliminar_factura
-act_1 ------> Consultar_factura
-act_1 ------> Generar_empaquetado
-act_1 ------> Modificar_empaquetado
-act_1 ------> Eliminar_empaquetado
-act_1 ------> consul
+act_1 --> act_2
+act_1 --> act_3
+act_1 --> act_4
+act_1 --> Identificarse
+act_1 --> Consultar_usuario
+act_1 --> Modificar_usuario
+act_1 --> Eliminar_usuario
+act_1 --> Introducir_usuario
 
-act_4 ------> Generar_empaquetado
-act_4 ------> Modificar_empaquetado
-act_4 ------> Eliminar_empaquetado
-act_4 ------> Consultar_empaquetado
+act_4 --> Generar_empaquetado
+act_4 --> Modificar_empaquetado
+act_4 --> Eliminar_empaquetado
+act_4 --> Consultar_empaquetado
+act_4 --> Identificarse
 
-act_2 ------> Generar_ruta
-act_2 ------>   Modificar_ruta
-act_2 ------>   Eliminar_ruta
-act_2 ------>   Consultar_ruta
+act_2 --> Generar_ruta
+act_2 -->   Modificar_ruta
+act_2 -->   Eliminar_ruta
+act_2 -->   Consultar_ruta
+act_2 -->   Identificarse
 
-act_3 ------>   Generar_factura
-act_3 ------>   Modificar_factura
-act_3 ------>   Eliminar_factura
-act_3 ------>   Consultar_factura
+act_3 -->   Generar_factura
+act_3 -->   Modificar_factura
+act_3 -->   Eliminar_factura
+act_3 -->   Consultar_factura
+act_3 -->   Identificarse
 
 Generar_ruta --> ingresar_datos_ruta
 ingresar_datos_ruta --> verificar_ruta
