@@ -3,7 +3,7 @@
 // Autores: Luis Valbuena - Benjamín Miguel
 
 // Definimos la clase Facturacion
-public class Facturacion {
+public class Facturacion implements GestorDatos{
     // Definimos los atributos de la clase Facturacion
     private String codigo; // Código de la factura
     private String fecha; // Fecha de la factura
@@ -30,36 +30,22 @@ public class Facturacion {
         this.estado = estado;
     }
 
-    // Definimos los getters y setters de la clase Facturacion
-    public String getCodigo() { return codigo; }
-    public void setCodigo(String codigo) { this.codigo = codigo; }
+    
+    // Implementación de los métodos de la interfaz GestorDatos
+    @Override
+    public void setDatos(String datos) {
+        // Lógica para configurar los datos de la factura a partir de una cadena
+    }
 
-    public String getFecha() { return fecha; }
-    public void setFecha(String fecha) { this.fecha = fecha; }
+    @Override
+    public String getDatos() {
+        return "Código: " + codigo + ", Fecha: " + fecha + ", Hora: " + hora +
+                ", Tipo: " + tipo + ", Matrícula: " + matricula + ", Nombre: " + nombre +
+                ", DNI: " + dni + ", Concepto: " + concepto + ", Importe: " + importe +
+                ", Estado: " + estado;
+    }
 
-    public String getHora() { return hora; }
-    public void setHora(String hora) { this.hora = hora; }
-
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
-
-    public String getMatricula() { return matricula; }
-    public void setMatricula(String matricula) { this.matricula = matricula; }
-
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getDni() { return dni; }
-    public void setDni(String dni) { this.dni = dni; }
-
-    public String getConcepto() { return concepto; }
-    public void setConcepto(String concepto) { this.concepto = concepto; }
-
-    public double getImporte() { return importe; }
-    public void setImporte(double importe) { this.importe = importe; }
-
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    // Getters y setters si fueran necesarios
 }
     
     

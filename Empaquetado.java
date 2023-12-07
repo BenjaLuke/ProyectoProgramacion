@@ -3,7 +3,7 @@
 // Autores: Luis Valbuena - Benjamín Miguel
 
 // Definimos la clase Empaquetado
-public class Empaquetado {
+public class Empaquetado implements GestorDatos{
     // Atributos de la clase Empaquetado
     private int numeroContenedores;
     private double peso;
@@ -18,30 +18,15 @@ public class Empaquetado {
         
     }
 
-    // Getters y Setters para los atributos de la clase Empaquetado
-    
-    public int getNumeroContenedores() {
-        return numeroContenedores;
+    // Implementación de los métodos de la interfaz GestorDatos
+    @Override
+    public void setDatos(String datos) {
+        // Lógica para configurar los datos de empaquetado a partir de una cadena
     }
 
-    public void setNumeroContenedores(int numeroContenedores) {
-        this.numeroContenedores = numeroContenedores;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public double getTamano() {
-        return tamano;
-    }
-
-    public void setTamano(double tamano) {
-        this.tamano = tamano;
+    @Override
+    public String getDatos() {
+        return "Número de contenedores: " + numeroContenedores + ", Peso: " + peso + ", Tamaño: " + tamano;
     }
 
     // Método para calcular la densidad del empaquetado
