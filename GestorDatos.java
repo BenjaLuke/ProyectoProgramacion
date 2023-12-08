@@ -8,7 +8,9 @@
 // eliminar y obtener datos de las clases que la implementen.
 public interface GestorDatos {
     
-    String getDatos();
-    void setDatos(String datos);
+    void crear(); // Método crear
+    void modificar(); // Método modificar
+    void eliminar(); // Método eliminar
+    String leer(); // Método leer (obtener datos)
     
 }

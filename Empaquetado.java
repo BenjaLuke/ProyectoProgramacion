@@ -20,13 +20,24 @@ public class Empaquetado implements GestorDatos{
 
     // Implementación de los métodos de la interfaz GestorDatos
     @Override
-    public void setDatos(String datos) {
-        // Lógica para configurar los datos de empaquetado a partir de una cadena
+    public void crear() {
+        // Lógica para crear un usuario
     }
 
     @Override
-    public String getDatos() {
-        return "Número de contenedores: " + numeroContenedores + ", Peso: " + peso + ", Tamaño: " + tamano;
+    public void modificar() {
+        // Lógica para modificar un usuario
+    }
+
+    @Override
+    public void eliminar() {
+        // Lógica para eliminar un usuario
+    }
+
+    @Override
+    public String leer() {
+        // Lógica para leer (obtener datos) de un usuario
+        return null; // Retorna los datos del usuario
     }
 
     // Método para calcular la densidad del empaquetado

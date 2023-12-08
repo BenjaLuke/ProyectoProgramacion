@@ -24,24 +24,7 @@ public class Ruta implements GestorDatos, Trayecto{
         this.costeRuta = costeRuta;
     }
 
-    // Implementación de los métodos de la interfaz GestorDatos
-    @Override
-    public void setDatos(String datos) {
-        // Lógica para configurar los datos de la ruta a partir de una cadena
-    }
-
-    @Override
-    public String getDatos() {
-        return "ID Ruta: " + idRuta + ", Tipo Ruta: " + tipoRuta + ", Puerto Origen: " + puertoOrigen
-                + ", Puerto Destino: " + puertoDestino;
-    }
-
-    // Implementación de los métodos de la interfaz Trayecto
-    @Override
-    public void setTrayecto(String trayecto) {
-        // Lógica para configurar los datos del trayecto a partir de una cadena
-    }
-    public String getTrayecto() {
-        return "Fecha Salida: " + fechaSalida + ", Fecha Llegada: " + fechaLlegada + ", Coste Ruta: " + costeRuta;
+    public void agregarTrayecto() {
+        // Lógica para agregar un trayecto
     }
 }
