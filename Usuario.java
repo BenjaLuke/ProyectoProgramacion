@@ -24,16 +24,25 @@ public class Usuario implements GestorDatos{
 
 
     // Implementamos los métodos de la interface GestorDatos
-    @Override // Sobreescribimos el método getDatos
-    public String getDatos() {
-        // Lógica para obtener los datos del usuario
-        return "Datos del usuario{" + "id=" + id + ", nombre=" + nombre + ", clave=" + clave + ", tipoUsuario=" + tipoUsuario + ", telefono=" + telefono + ", email=" + email + '}';
+    @Override
+    public void crear() {
+        // Lógica para crear un usuario
     }
 
-    @Override // Sobreescribimos el método setDatos
-    public void setDatos(String datos) {
-        // Lógica para establecer los datos del usuario, ya sea crear, modificar o eliminar
+    @Override
+    public void modificar() {
+        // Lógica para modificar un usuario
+    }
 
+    @Override
+    public void eliminar() {
+        // Lógica para eliminar un usuario
+    }
+
+    @Override
+    public String leer() {
+        // Lógica para leer (obtener datos) de un usuario
+        return null; // Retorna los datos del usuario
     }
     
 }

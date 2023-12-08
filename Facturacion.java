@@ -33,16 +33,24 @@ public class Facturacion implements GestorDatos{
     
     // Implementación de los métodos de la interfaz GestorDatos
     @Override
-    public void setDatos(String datos) {
-        // Lógica para configurar los datos de la factura a partir de una cadena
+    public void crear() {
+        // Lógica para crear un usuario
     }
 
     @Override
-    public String getDatos() {
-        return "Código: " + codigo + ", Fecha: " + fecha + ", Hora: " + hora +
-                ", Tipo: " + tipo + ", Matrícula: " + matricula + ", Nombre: " + nombre +
-                ", DNI: " + dni + ", Concepto: " + concepto + ", Importe: " + importe +
-                ", Estado: " + estado;
+    public void modificar() {
+        // Lógica para modificar un usuario
+    }
+
+    @Override
+    public void eliminar() {
+        // Lógica para eliminar un usuario
+    }
+
+    @Override
+    public String leer() {
+        // Lógica para leer (obtener datos) de un usuario
+        return null; // Retorna los datos del usuario
     }
 
     // Getters y setters si fueran necesarios
