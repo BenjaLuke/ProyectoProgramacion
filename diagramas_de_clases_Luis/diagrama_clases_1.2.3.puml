@@ -9,8 +9,10 @@ class Usuario implements GestorDatos{
     - telefono: String
     - email: String
     
-    + getDatosUsuario(): String
-    + setDatosUsuario(datos: String): void
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
     
 }
 
@@ -20,11 +22,13 @@ class Operacion implements GestorDatos{
     
     - id_operacion: int    
     
-    + getOperacion(): int
-    + setOperacion(id: int): void
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
 }
 
-class Ruta implements Trayecto, GestorDatos{
+class Ruta {
     - id_ruta: int
     - tipoRuta: String
     - puertoOrigen: String
@@ -34,38 +38,45 @@ class Ruta implements Trayecto, GestorDatos{
     - costeRuta: int
     
     + agregarTrayecto(): String()
+
     
 }
 
 
 
-class RutaTerrestre extends Ruta {
+class RutaTerrestre extends Ruta implements GestorDatos{
     - tipoTerreno: String
     - numeroPeajes: int
     - estadoCarreteras: String
     
-    + getRutaTerrestre(): String
-    + setRutaTerrestre(): String
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
   
 }
 
-class RutaMaritima extends Ruta {
+class RutaMaritima extends Ruta implements GestorDatos{
     - profundidadAgua: double
     - condicionesMar: String
     - puertosIntermedios: String[]
     
-    + getRutaMaritima(): String
-    + setRutaMaritima(): String
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
     
 }
 
-class RutaAerea extends Ruta {
+class RutaAerea extends Ruta implements GestorDatos{
     - rutasVuelo: String[]
     - altitudVuelo: double
     - condicionesAtmosfericas: String
     
-    + getRutaAereo(): String
-    + setRutaAereo(): String
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
     
 }
 
@@ -74,8 +85,10 @@ class Empaquetado implements GestorDatos{
     - peso: double
     - tamano: double
     
-    + getDatosContenedores(): int
-    + setDatosContenedores(datoContenedores: String): void
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
     
 }
 
@@ -91,20 +104,20 @@ class Facturacion implements GestorDatos{
     - importe: double
     - estado: String
     
-    + getDatosFacturacion(): String
-    + setDatosFacturacion(datos: String): void
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
     
 }
 
 interface GestorDatos {
-    + getDatos(): String
-    + setDatos(datos: String): void
+    + crear(): void
+    + leer(): String
+    + actualizar(): void
+    + eliminar(): void
 }
 
-interface Trayecto {
-    + getTrayecto(): String
-    + setTrayecto(trayecto: String): void
-}
 
 
 
