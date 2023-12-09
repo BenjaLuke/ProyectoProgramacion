@@ -4,7 +4,7 @@
 
 // Definimos la clase ruta Marítima
 
-public class rutaMaritima implements GestorDatos{
+public class rutaMaritima extends Ruta implements GestorDatos{
     // Atributos y métodos específicos de RutaMaritima
 
     private double profundidadAgua;
