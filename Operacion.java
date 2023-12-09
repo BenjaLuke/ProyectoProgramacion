@@ -15,23 +15,23 @@ public class Operacion implements GestorDatos{
     // Implementación de los métodos de la interfaz GestorDatos
         @Override
     public void crear() {
-        // Lógica para crear un usuario
+        // Lógica para crear una operación
     }
 
     @Override
     public void modificar() {
-        // Lógica para modificar un usuario
+        // Lógica para modificar una operación
     }
 
     @Override
     public void eliminar() {
-        // Lógica para eliminar un usuario
+        // Lógica para eliminar una operación
     }
 
     @Override
     public String leer() {
-        // Lógica para leer (obtener datos) de un usuario
-        return null; // Retorna los datos del usuario
+        // Lógica para leer (obtener datos) de una operación
+        return null; // Retorna los datos de una operación
     }
 }
 
