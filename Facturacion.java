@@ -3,7 +3,7 @@
 // Autores: Luis Valbuena - Benjamín Miguel
 
 // Definimos la clase Facturacion
-public class Facturacion implements GestorDatos{
+public class Facturacion extends Operacion implements GestorDatos{
     // Definimos los atributos de la clase Facturacion
     private String codigo; // Código de la factura
     private String fecha; // Fecha de la factura
@@ -17,7 +17,7 @@ public class Facturacion implements GestorDatos{
     private String estado; // Estado de la factura
 
     // Definimos el constructor de la clase Facturacion
-    public Facturacion(String codigo, String fecha, String hora, String tipo, String matricula, String nombre, String dni, String concepto, double importe, String estado) {
+    public Facturacion (String codigo, String fecha, String hora, String tipo, String matricula, String nombre, String dni, String concepto, double importe, String estado) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.hora = hora;
@@ -34,23 +34,23 @@ public class Facturacion implements GestorDatos{
     // Implementación de los métodos de la interfaz GestorDatos
     @Override
     public void crear() {
-        // Lógica para crear un usuario
+        // Lógica para crear una factura
     }
 
     @Override
     public void modificar() {
-        // Lógica para modificar un usuario
+        // Lógica para modificar una factura
     }
 
     @Override
     public void eliminar() {
-        // Lógica para eliminar un usuario
+        // Lógica para eliminar una factura
     }
 
     @Override
     public String leer() {
-        // Lógica para leer (obtener datos) de un usuario
-        return null; // Retorna los datos del usuario
+        // Lógica para leer (obtener datos) de una factura
+        return null; // Retorna los datos de una factura
     }
 
     // Getters y setters si fueran necesarios

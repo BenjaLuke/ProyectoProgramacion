@@ -3,7 +3,7 @@
 // Autores: Luis Valbuena - Benjamín Miguel
 
 // Definimos la clase Empaquetado
-public class Empaquetado implements GestorDatos{
+public class Empaquetado extends Operacion implements GestorDatos{
     // Atributos de la clase Empaquetado
     private int numeroContenedores;
     private double peso;
@@ -21,23 +21,23 @@ public class Empaquetado implements GestorDatos{
     // Implementación de los métodos de la interfaz GestorDatos
     @Override
     public void crear() {
-        // Lógica para crear un usuario
+        // Lógica para crear un empaquetado
     }
 
     @Override
     public void modificar() {
-        // Lógica para modificar un usuario
+        // Lógica para modificar un empaquetado
     }
 
     @Override
     public void eliminar() {
-        // Lógica para eliminar un usuario
+        // Lógica para eliminar un empaquetado
     }
 
     @Override
     public String leer() {
-        // Lógica para leer (obtener datos) de un usuario
-        return null; // Retorna los datos del usuario
+        // Lógica para leer (obtener datos) de un empaquetado
+        return null; // Retorna los datos del empaquetado
     }
 
     // Método para calcular la densidad del empaquetado

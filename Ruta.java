@@ -3,7 +3,7 @@
 // Autores: Luis Valbuena - Benjamín Miguel
 
 // Definimos la clase Ruta 
-public class Ruta implements GestorDatos, Trayecto{
+public class Ruta extends Operacion{
     // Atributos clase Ruta
     private int idRuta;
     private String tipoRuta;
@@ -13,7 +13,7 @@ public class Ruta implements GestorDatos, Trayecto{
     private Date fechaLlegada;
     private int costeRuta;
 
-    public Ruta(int idRuta, String tipoRuta, String puertoOrigen, String puertoDestino, Date fechaSalida,
+    public Ruta (int idRuta, String tipoRuta, String puertoOrigen, String puertoDestino, Date fechaSalida,
             Date fechaLlegada, int costeRuta) {
         this.idRuta = idRuta;
         this.tipoRuta = tipoRuta;
