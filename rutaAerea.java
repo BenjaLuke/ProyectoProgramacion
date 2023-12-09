@@ -4,7 +4,7 @@
 
 // Definimos la clase ruta Aérea
 
-public class rutaAerea implements GestorDatos{
+public class rutaAerea extends Ruta implements GestorDatos{
     // Atributos y métodos específicos de RutaAerea
     private String[] rutasVuelo;
     private double altitudVuelo;
