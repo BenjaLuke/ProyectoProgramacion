@@ -1,2 +1,4 @@
-# Ignora todos os arquivos .class
+# Ignora todos los arquivos .class
 *.class
+# ignora el directorio bin
+proyecto_logistica.db
