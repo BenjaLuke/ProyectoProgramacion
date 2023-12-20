@@ -1,3 +1,7 @@
+// 21GIIN - Proyectos de Programación - Clase programaUsuario
+// Proyecto: Gestión logística Portuaria
+// Autores: Luis Valbuena - Benjamín Miguel
+
 import java.util.Scanner;
 
 public class programaUsuario {

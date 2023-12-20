@@ -1,4 +1,4 @@
-// 21GIIN - Proyectos de Programación - Clase Empaquetado
+// 21GIIN - Proyectos de Programación - Clase Usuario
 // Proyecto: Gestión logística Portuaria
 // Autores: Luis Valbuena - Benjamín Miguel
 

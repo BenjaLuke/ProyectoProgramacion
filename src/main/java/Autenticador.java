@@ -1,4 +1,4 @@
-// 21GIIN - Proyectos de Programación - Clase Empaquetado
+// 21GIIN - Proyectos de Programación - Clase Autenticador
 // Proyecto: Gestión logística Portuaria
 // Autores: Luis Valbuena - Benjamín Miguel
 
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
-import src/main/java()
+import src/main/java();
 
 // Clase que se encarga de autenticar a los usuarios
 public class Autenticador {
