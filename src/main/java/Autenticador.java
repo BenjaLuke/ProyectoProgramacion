@@ -21,7 +21,8 @@ public class Autenticador {
             "INNER JOIN usuarios u ON u.id = ur.id_usuario " +
             "WHERE u.email = ?";
 
-    private SQLiteManager manager; // Objeto SQLiteManager para conectarnos a la base de datos
+    protected SQLiteManager manager; // Objeto SQLiteManager para conectarnos a la base de datos
+    
 
     // Constructor
     public Autenticador() {
@@ -69,7 +70,7 @@ public class Autenticador {
                     if (rolesUsuario.contains("admin")) { // Si el usuario tiene el rol admin
                         System.out.println("Bienvenido administrador"); // Mostramos un mensaje de bienvenida
                         // Lanzamos el menú de administrador
-                        programaUsuario.iniciarMenu(args);
+                        programaUsuario.iniciarMenu(new String[] {});
                     } else if (rolesUsuario.contains("Operador")) {
                         System.out.println("Redirigiendo a la pantalla de operador...");
                     } else if (rolesUsuario.contains("Cliente")) {
