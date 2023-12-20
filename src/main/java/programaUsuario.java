@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class programaUsuario {
 
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
+    public static void iniciarMenu(String[] args) {
         System.setProperty("file.encoding", "UTF-8");
         Scanner scanner = new Scanner(System.in);
         int opcion;
