@@ -5,8 +5,6 @@
 // Importamos las librerías necesarias
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import java.util.Iterator;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
