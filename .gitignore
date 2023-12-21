@@ -2,3 +2,5 @@
 *.class
 # ignora el directorio bin
 proyecto_logistica.db
+# Ignora target
+target/
