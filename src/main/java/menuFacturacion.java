@@ -108,4 +108,57 @@ public class menuFacturacion {
         factura.crear(); // Creamos la factura en la base de datos
     }
 
+    // Método para modificar una factura
+    private static void modificarFactura(Scanner scanner) {
+        System.out.println("=== Modificar factura ===");
+        System.out.print("Introduzca el ID de la factura a modificar: ");
+        int id_facturacion = scanner.nextInt(); // Pedimos el ID de la factura a modificar
+        scanner.nextLine(); // Consumir el salto de línea después del nextInt()
+
+        // Obtener la fecha y la hora actuales del sistema
+        java.sql.Date fechaActual = obtenerFechaActual();
+        java.sql.Time horaActual = obtenerHoraActual();
+
+        System.out.println("Fecha actual: " + fechaActual);
+        System.out.println("Hora actual: " + horaActual);
+
+        System.out.print("Introduzca el nuevo tipo de la factura: ");
+        String tipo = scanner.nextLine(); // Pedimos el tipo de la factura
+        System.out.print("Introduzca la nueva matrícula del vehículo: ");
+        String matricula = scanner.nextLine(); // Pedimos la matrícula del vehículo
+        System.out.print("Introduzca el nuevo nombre del cliente: ");
+        String nombre = scanner.nextLine(); // Pedimos el nombre del cliente
+        System.out.print("Introduzca el nuevo DNI del cliente: ");
+        String dni = scanner.nextLine(); // Pedimos el DNI del cliente
+        System.out.print("Introduzca el nuevo concepto de la factura: ");
+        String concepto = scanner.nextLine(); // Pedimos el concepto de la factura
+        System.out.print("Introduzca el nuevo importe de la factura: ");
+        double importe = scanner.nextDouble(); // Pedimos el importe de la factura
+        scanner.nextLine(); // Consumir el salto de línea después del nextDouble()
+        System.out.print("Introduzca el nuevo estado de la factura: ");
+        String estado = scanner.nextLine(); // Pedimos el estado de la factura
+
+        Facturacion factura = new Facturacion(id_facturacion, fechaActual, horaActual, tipo, matricula, nombre, dni, concepto, importe, estado); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        factura.modificar(); // Modificamos la factura en la base de datos
+    }
+
+    // Método para eliminar una factura
+    private static void eliminarFactura(Scanner scanner) {
+        System.out.println("=== Eliminar factura ===");
+        System.out.print("Introduzca el ID de la factura a eliminar: ");
+        int id_facturacion = scanner.nextInt(); // Pedimos el ID de la factura a eliminar
+        scanner.nextLine(); // Consumir el salto de línea después del nextInt()
+
+        Facturacion factura = new Facturacion(id_facturacion, null, null, null, null, null, null, null, 0, null); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        factura.eliminar(); // Eliminamos la factura de la base de datos
+    }
+
+    // Método para mostrar todas las facturas
+    private static void mostrarFacturas() {
+        System.out.println("=== Mostrar todas las facturas ===");
+
+        Facturacion factura = new Facturacion(0, null, null, null, null, null, null, null, 0, null); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        factura.leer(); // Mostramos todas las facturas de la base de datos
+    }
+
 }
