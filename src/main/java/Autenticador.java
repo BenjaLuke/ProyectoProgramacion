@@ -80,6 +80,8 @@ public class Autenticador {
                     } else {
                         System.out.println("El usuario no tiene roles asignados");
                     }
+                    // Cerramos la conexión con la base de datos
+                    connection.close();
                 } else {
                     System.out.println("Usuario o contraseña incorrectos");
                 }
