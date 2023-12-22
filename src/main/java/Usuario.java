@@ -56,6 +56,7 @@ public class Usuario implements GestorDatos{
             System.out.println("Usuario creado con éxito: " + this.nombre);
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Error al crear el usuario: " + e.getMessage());
         } finally {
             manager.closeConnection();
         }
