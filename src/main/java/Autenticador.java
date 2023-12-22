@@ -38,116 +38,116 @@ public class Autenticador {
         }
 
     // // Método para autenticar usuarios
-    // public void autenticarUsuario() {
-    //     try (Scanner scanner = new Scanner(System.in)) { // Creamos un objeto Scanner para leer datos del usuario
-    //         System.out.println("=== Autenticación ===");
-    //         System.out.print("Introduzca su email: ");
-    //         String email = scanner.nextLine(); // Leemos el email
-    //         System.out.print("Introduzca su contraseña: ");
-    //         String clave = scanner.nextLine(); // Leemos la clave
-
-    //         // Lógica de autenticación
-    //         try (Connection connection = manager.getConnection(); // Creamos la conexión con la base de datos
-    //         PreparedStatement statement = connection.prepareStatement(SELECT_USER_QUERY)) { // Creamos el PreparedStatement para buscar el usuario
-
-    //             statement.setString(1, email); // Asignamos el email
-    //             statement.setString(2, clave);  // Asignamos la clave
-
-    //             ResultSet resultSet = statement.executeQuery(); // Ejecutamos la consulta
-    //             if (resultSet.next()) { // Si el usuario existe
-    //                 String emailUsario = resultSet.getString("email"); // Obtenemos el email del usuario
-
-    //                 PreparedStatement rolesStatement = connection.prepareStatement(SELECT_USER_ROLES_QUERY); // Creamos el PreparedStatement para buscar los roles del usuario
-    //                 rolesStatement.setString(1, emailUsario); // Asignamos el email del usuario
-    //                 ResultSet rolesResultSet = rolesStatement.executeQuery(); // Ejecutamos la consulta
-
-    //                 List<String> rolesUsuario = new ArrayList<>(); // Creamos una lista para guardar los roles del usuario
-    //                 while (rolesResultSet.next()) { // Guardamos los roles en la lista
-    //                     String nombreRol = rolesResultSet.getString("nombre"); // Obtenemos el nombre del rol
-    //                     rolesUsuario.add(nombreRol); // Agregamos el rol a la lista
-    //                 }
-                    
-    //                 if (rolesUsuario.contains("Admin")) { // Si el usuario tiene el rol admin
-    //                     System.out.println("Bienvenido administrador"); // Mostramos un mensaje de bienvenida
-    //                     // Lanzamos el menú de administrador
-    //                     programaUsuario.iniciarMenu(new String[] {});
-    //                 } else if (rolesUsuario.contains("Contable")) {
-    //                     System.out.println("Bienvenido contable");
-    //                     // Lanzamos el menú de contable
-    //                     menuFacturacion.iniciarMenu(); // Lanzamos el menú de facturación
-    //                 } else if (rolesUsuario.contains("Cliente")) {
-    //                     System.out.println("Redirigiendo a la pantalla de cliente...");
-    //                 } else {
-    //                     System.out.println("El usuario no tiene roles asignados");
-    //                 }
-    //                 // Cerramos la conexión con la base de datos
-    //                 connection.close();
-    //             } else {
-    //                 System.out.println("Usuario o contraseña incorrectos");
-    //             }
-    //         } catch (SQLException e) {
-    //             e.printStackTrace();
-    //         }
-    //     }
-    // }
     public void autenticarUsuario() {
-        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in)) { // Creamos un objeto Scanner para leer datos del usuario
             System.out.println("=== Autenticación ===");
             System.out.print("Introduzca su email: ");
-            String email = scanner.nextLine();
+            String email = scanner.nextLine(); // Leemos el email
             System.out.print("Introduzca su contraseña: ");
-            String clave = scanner.nextLine();
+            String clave = scanner.nextLine(); // Leemos la clave
 
-            Connection connection = null;
+            // Lógica de autenticación
+            try (Connection connection = manager.getConnection(); // Creamos la conexión con la base de datos
+            PreparedStatement statement = connection.prepareStatement(SELECT_USER_QUERY)) { // Creamos el PreparedStatement para buscar el usuario
 
-            try {
-                connection = manager.getConnection();
+                statement.setString(1, email); // Asignamos el email
+                statement.setString(2, clave);  // Asignamos la clave
 
-                try (PreparedStatement statement = connection.prepareStatement(SELECT_USER_QUERY)) {
-                    statement.setString(1, email);
-                    statement.setString(2, clave);
-                    ResultSet resultSet = statement.executeQuery();
+                ResultSet resultSet = statement.executeQuery(); // Ejecutamos la consulta
+                if (resultSet.next()) { // Si el usuario existe
+                    String emailUsario = resultSet.getString("email"); // Obtenemos el email del usuario
 
-                    if (resultSet.next()) {
-                        String emailUsuario = resultSet.getString("email");
+                    PreparedStatement rolesStatement = connection.prepareStatement(SELECT_USER_ROLES_QUERY); // Creamos el PreparedStatement para buscar los roles del usuario
+                    rolesStatement.setString(1, emailUsario); // Asignamos el email del usuario
+                    ResultSet rolesResultSet = rolesStatement.executeQuery(); // Ejecutamos la consulta
 
-                        PreparedStatement rolesStatement = connection.prepareStatement(SELECT_USER_ROLES_QUERY);
-                        rolesStatement.setString(1, emailUsuario);
-                        ResultSet rolesResultSet = rolesStatement.executeQuery();
-
-                        List<String> rolesUsuario = new ArrayList<>();
-                        while (rolesResultSet.next()) {
-                            String nombreRol = rolesResultSet.getString("nombre");
-                            rolesUsuario.add(nombreRol);
-                        }
-
-                        if (rolesUsuario.contains("Admin")) {
-                            System.out.println("Bienvenido administrador");
-                            programaUsuario.iniciarMenu(new String[] {});
-                        } else if (rolesUsuario.contains("Contable")) {
-                            System.out.println("Bienvenido contable");
-                            menuFacturacion.iniciarMenu();
-                        } else if (rolesUsuario.contains("Cliente")) {
-                            System.out.println("Redirigiendo a la pantalla de cliente...");
-                        } else {
-                            System.out.println("El usuario no tiene roles asignados");
-                        }
-                    } else {
-                        System.out.println("Usuario o contraseña incorrectos");
+                    List<String> rolesUsuario = new ArrayList<>(); // Creamos una lista para guardar los roles del usuario
+                    while (rolesResultSet.next()) { // Guardamos los roles en la lista
+                        String nombreRol = rolesResultSet.getString("nombre"); // Obtenemos el nombre del rol
+                        rolesUsuario.add(nombreRol); // Agregamos el rol a la lista
                     }
+                    
+                    if (rolesUsuario.contains("Admin")) { // Si el usuario tiene el rol admin
+                        System.out.println("Bienvenido administrador"); // Mostramos un mensaje de bienvenida
+                        // Lanzamos el menú de administrador
+                        programaUsuario.iniciarMenu(new String[] {});
+                    } else if (rolesUsuario.contains("Contable")) {
+                        System.out.println("Bienvenido contable");
+                        // Lanzamos el menú de contable
+                        menuFacturacion.iniciarMenu(); // Lanzamos el menú de facturación
+                    } else if (rolesUsuario.contains("Cliente")) {
+                        System.out.println("Redirigiendo a la pantalla de cliente...");
+                    } else {
+                        System.out.println("El usuario no tiene roles asignados");
+                    }
+                    // Cerramos la conexión con la base de datos
+                    connection.close();
+                } else {
+                    System.out.println("Usuario o contraseña incorrectos");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    if (connection != null) {
-                        connection.close(); // Cerramos la conexión al finalizar todas las operaciones
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
         }
+    }
+    // public void autenticarUsuario() {
+    //     try (Scanner scanner = new Scanner(System.in)) {
+    //         System.out.println("=== Autenticación ===");
+    //         System.out.print("Introduzca su email: ");
+    //         String email = scanner.nextLine();
+    //         System.out.print("Introduzca su contraseña: ");
+    //         String clave = scanner.nextLine();
+
+    //         Connection connection = null;
+
+    //         try {
+    //             connection = manager.getConnection();
+
+    //             try (PreparedStatement statement = connection.prepareStatement(SELECT_USER_QUERY)) {
+    //                 statement.setString(1, email);
+    //                 statement.setString(2, clave);
+    //                 ResultSet resultSet = statement.executeQuery();
+
+    //                 if (resultSet.next()) {
+    //                     String emailUsuario = resultSet.getString("email");
+
+    //                     PreparedStatement rolesStatement = connection.prepareStatement(SELECT_USER_ROLES_QUERY);
+    //                     rolesStatement.setString(1, emailUsuario);
+    //                     ResultSet rolesResultSet = rolesStatement.executeQuery();
+
+    //                     List<String> rolesUsuario = new ArrayList<>();
+    //                     while (rolesResultSet.next()) {
+    //                         String nombreRol = rolesResultSet.getString("nombre");
+    //                         rolesUsuario.add(nombreRol);
+    //                     }
+
+    //                     if (rolesUsuario.contains("Admin")) {
+    //                         System.out.println("Bienvenido administrador");
+    //                         programaUsuario.iniciarMenu(new String[] {});
+    //                     } else if (rolesUsuario.contains("Contable")) {
+    //                         System.out.println("Bienvenido contable");
+    //                         menuFacturacion.iniciarMenu();
+    //                     } else if (rolesUsuario.contains("Cliente")) {
+    //                         System.out.println("Redirigiendo a la pantalla de cliente...");
+    //                     } else {
+    //                         System.out.println("El usuario no tiene roles asignados");
+    //                     }
+    //                 } else {
+    //                     System.out.println("Usuario o contraseña incorrectos");
+    //                 }
+    //             }
+    //         } catch (SQLException e) {
+    //             e.printStackTrace();
+    //         } finally {
+    //             try {
+    //                 if (connection != null) {
+    //                     connection.close(); // Cerramos la conexión al finalizar todas las operaciones
+    //                 }
+    //             } catch (SQLException e) {
+    //                 e.printStackTrace();
+    //             }
+    //         }
+    //     }
     }
 
 }
