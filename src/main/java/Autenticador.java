@@ -67,12 +67,14 @@ public class Autenticador {
                         rolesUsuario.add(nombreRol); // Agregamos el rol a la lista
                     }
                     
-                    if (rolesUsuario.contains("admin")) { // Si el usuario tiene el rol admin
+                    if (rolesUsuario.contains("Admin")) { // Si el usuario tiene el rol admin
                         System.out.println("Bienvenido administrador"); // Mostramos un mensaje de bienvenida
                         // Lanzamos el menú de administrador
                         programaUsuario.iniciarMenu(new String[] {});
-                    } else if (rolesUsuario.contains("Operador")) {
-                        System.out.println("Redirigiendo a la pantalla de operador...");
+                    } else if (rolesUsuario.contains("Contable")) {
+                        System.out.println("Bienvenido contable");
+                        // Lanzamos el menú de contable
+                        menuFacturacion.iniciarMenu(); // Lanzamos el menú de facturación
                     } else if (rolesUsuario.contains("Cliente")) {
                         System.out.println("Redirigiendo a la pantalla de cliente...");
                     } else {
