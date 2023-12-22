@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class Usuario implements GestorDatos{
     
     // Definimos la lista de usuarios
-    private static List<Usuario> listaUsuarios = new ArrayList<>();
+    //private static List<Usuario> listaUsuarios = new ArrayList<>();
 
     // Definimos el contador de ids
     //private static int contadorIds = 0; // Variable estática para generar IDs únicos

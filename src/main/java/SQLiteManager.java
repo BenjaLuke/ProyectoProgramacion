@@ -10,7 +10,7 @@ public class SQLiteManager {
         try{
             Class.forName("org.sqlite.JDBC"); // carga el driver de SQLite
             connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath); // establece la conexion con la base de datos
-            System.out.println("Conexion establecida"); // imprime un mensaje de conexion establecida
+            System.out.println("Conexion establecida con la base de datos: " + dbFilePath); // imprime un mensaje de conexion establecida
         }catch(ClassNotFoundException | SQLException e){ // captura las excepciones
             e.printStackTrace(); // imprime la excepcion
         }
