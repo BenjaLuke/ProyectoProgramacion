@@ -69,10 +69,12 @@ public class Autenticador {
                     
                     if (rolesUsuario.contains("Admin")) { // Si el usuario tiene el rol admin
                         System.out.println("Bienvenido administrador"); // Mostramos un mensaje de bienvenida
+                        connection.close(); // Cerramos la conexión con la base de datos
                         // Lanzamos el menú de administrador
                         programaUsuario.iniciarMenu(new String[] {});
                     } else if (rolesUsuario.contains("Contable")) {
                         System.out.println("Bienvenido contable");
+                        connection.close(); // Cerramos la conexión con la base de datos
                         // Lanzamos el menú de contable
                         menuFacturacion.iniciarMenu(); // Lanzamos el menú de facturación
                     } else if (rolesUsuario.contains("Cliente")) {
@@ -81,7 +83,7 @@ public class Autenticador {
                         System.out.println("El usuario no tiene roles asignados");
                     }
                     // Cerramos la conexión con la base de datos
-                    connection.close();
+                    //connection.close();
                 } else {
                     System.out.println("Usuario o contraseña incorrectos");
                 }
@@ -90,64 +92,5 @@ public class Autenticador {
             }
         }
     }
-    // public void autenticarUsuario() {
-    //     try (Scanner scanner = new Scanner(System.in)) {
-    //         System.out.println("=== Autenticación ===");
-    //         System.out.print("Introduzca su email: ");
-    //         String email = scanner.nextLine();
-    //         System.out.print("Introduzca su contraseña: ");
-    //         String clave = scanner.nextLine();
-
-    //         Connection connection = null;
-
-    //         try {
-    //             connection = manager.getConnection();
-
-    //             try (PreparedStatement statement = connection.prepareStatement(SELECT_USER_QUERY)) {
-    //                 statement.setString(1, email);
-    //                 statement.setString(2, clave);
-    //                 ResultSet resultSet = statement.executeQuery();
-
-    //                 if (resultSet.next()) {
-    //                     String emailUsuario = resultSet.getString("email");
-
-    //                     PreparedStatement rolesStatement = connection.prepareStatement(SELECT_USER_ROLES_QUERY);
-    //                     rolesStatement.setString(1, emailUsuario);
-    //                     ResultSet rolesResultSet = rolesStatement.executeQuery();
-
-    //                     List<String> rolesUsuario = new ArrayList<>();
-    //                     while (rolesResultSet.next()) {
-    //                         String nombreRol = rolesResultSet.getString("nombre");
-    //                         rolesUsuario.add(nombreRol);
-    //                     }
-
-    //                     if (rolesUsuario.contains("Admin")) {
-    //                         System.out.println("Bienvenido administrador");
-    //                         programaUsuario.iniciarMenu(new String[] {});
-    //                     } else if (rolesUsuario.contains("Contable")) {
-    //                         System.out.println("Bienvenido contable");
-    //                         menuFacturacion.iniciarMenu();
-    //                     } else if (rolesUsuario.contains("Cliente")) {
-    //                         System.out.println("Redirigiendo a la pantalla de cliente...");
-    //                     } else {
-    //                         System.out.println("El usuario no tiene roles asignados");
-    //                     }
-    //                 } else {
-    //                     System.out.println("Usuario o contraseña incorrectos");
-    //                 }
-    //             }
-    //         } catch (SQLException e) {
-    //             e.printStackTrace();
-    //         } finally {
-    //             try {
-    //                 if (connection != null) {
-    //                     connection.close(); // Cerramos la conexión al finalizar todas las operaciones
-    //                 }
-    //             } catch (SQLException e) {
-    //                 e.printStackTrace();
-    //             }
-    //         }
-    //     }
-    //}
 
 }

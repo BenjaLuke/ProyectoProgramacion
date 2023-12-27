@@ -44,7 +44,7 @@ public class SQLiteManager {
 
     // Método para crear la tabla de facturación
     public void createTableFacturacion(){
-        String sql = "CREATE TABLE IF NOT EXISTS facturacion (id_facturacion INTEGER PRIMARY KEY AUTOINCREMENT, fecha DATE NOT NULL, hora TIME NOT NULL, tipo TEXT NOT NULL, matricula TEXT NOT NULL, nombre TEXT NOT NULL, dni TEXT NOT NULL, concepto TEXT NOT NULL, importe REAL NOT NULL, estado TEXT NOT NULL)";
+        String sql = "CREATE TABLE IF NOT EXISTS facturacion (id_factura INTEGER PRIMARY KEY AUTOINCREMENT, fecha DATE NOT NULL, hora TIME NOT NULL, tipo TEXT NOT NULL, matricula TEXT NOT NULL, nombre TEXT NOT NULL, dni TEXT NOT NULL, concepto TEXT NOT NULL, importe REAL NOT NULL, estado TEXT NOT NULL)";
         try{
             connection.createStatement().execute(sql);
             System.out.println("Tabla facturacion creada");
