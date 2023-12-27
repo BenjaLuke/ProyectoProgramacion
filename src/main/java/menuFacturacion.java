@@ -19,8 +19,8 @@ public class menuFacturacion {
         Calendar calendar = Calendar.getInstance(); // Creamos un objeto Calendar para obtener la hora actual
         return new Time(calendar.getTimeInMillis()); // Devolvemos la hora actual
     }
-    
-    public static void iniciarMenu() { // Método para iniciar el menú de facturación
+    public static void main(String[] args) {
+    //public static void iniciarMenu() { // Método para iniciar el menú de facturación
         System.setProperty("file.encoding", "UTF-8"); // Establecemos la codificación de caracteres
         Scanner scanner = new Scanner(System.in); // Creamos un objeto Scanner para leer datos del usuario
         int opcion; // Variable para almacenar la opción seleccionada por el usuario
@@ -71,8 +71,8 @@ public class menuFacturacion {
 
         }finally{
             manager.closeConnection(); // Cerrar la conexión con la base de datos
-        }
-        scanner.close();
+            }
+            scanner.close();
     }
 
     private static void crearFactura(Scanner scanner) { // Método para crear una factura
@@ -102,9 +102,9 @@ public class menuFacturacion {
         String estado = scanner.nextLine(); // Pedimos el estado de la factura
 
         // Añadir ID de la factura de forma secuencial
-        int id_facturacion = 1 + (int) (Math.random() * 100); // Generar ID aleatorio
+        int id_factura = 1 + (int) (Math.random() * 100); // Generar ID aleatorio
 
-        Facturacion factura = new Facturacion(id_facturacion, fechaActual, horaActual, tipo, matricula, nombre, dni, concepto, importe, estado); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        Facturacion factura = new Facturacion(id_factura, fechaActual, horaActual, tipo, matricula, nombre, dni, concepto, importe, estado); // Creamos un objeto Facturacion con los datos introducidos por el usuario
         factura.crear(); // Creamos la factura en la base de datos
     }
 
@@ -112,7 +112,7 @@ public class menuFacturacion {
     private static void modificarFactura(Scanner scanner) {
         System.out.println("=== Modificar factura ===");
         System.out.print("Introduzca el ID de la factura a modificar: ");
-        int id_facturacion = scanner.nextInt(); // Pedimos el ID de la factura a modificar
+        int id_factura = scanner.nextInt(); // Pedimos el ID de la factura a modificar
         scanner.nextLine(); // Consumir el salto de línea después del nextInt()
 
         // Obtener la fecha y la hora actuales del sistema
@@ -138,7 +138,7 @@ public class menuFacturacion {
         System.out.print("Introduzca el nuevo estado de la factura: ");
         String estado = scanner.nextLine(); // Pedimos el estado de la factura
 
-        Facturacion factura = new Facturacion(id_facturacion, fechaActual, horaActual, tipo, matricula, nombre, dni, concepto, importe, estado); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        Facturacion factura = new Facturacion(id_factura, fechaActual, horaActual, tipo, matricula, nombre, dni, concepto, importe, estado); // Creamos un objeto Facturacion con los datos introducidos por el usuario
         factura.modificar(); // Modificamos la factura en la base de datos
     }
 
@@ -146,10 +146,10 @@ public class menuFacturacion {
     private static void eliminarFactura(Scanner scanner) {
         System.out.println("=== Eliminar factura ===");
         System.out.print("Introduzca el ID de la factura a eliminar: ");
-        int id_facturacion = scanner.nextInt(); // Pedimos el ID de la factura a eliminar
+        int id_factura = scanner.nextInt(); // Pedimos el ID de la factura a eliminar
         scanner.nextLine(); // Consumir el salto de línea después del nextInt()
 
-        Facturacion factura = new Facturacion(id_facturacion, null, null, null, null, null, null, null, 0, null); // Creamos un objeto Facturacion con los datos introducidos por el usuario
+        Facturacion factura = new Facturacion(id_factura, null, null, null, null, null, null, null, 0, null); // Creamos un objeto Facturacion con los datos introducidos por el usuario
         factura.eliminar(); // Eliminamos la factura de la base de datos
     }
 
