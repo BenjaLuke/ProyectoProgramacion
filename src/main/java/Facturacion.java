@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Date;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 
 // Definimos la clase Facturacion
 public class Facturacion implements GestorDatos{
@@ -46,9 +47,18 @@ public class Facturacion implements GestorDatos{
         String sql = "INSERT INTO facturacion (id_factura, fecha, hora, tipo, matricula, nombre, dni, concepto, importe, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = manager.getConnection().prepareStatement(sql)) { // Creamos el PreparedStatement para crear una factura
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Creamos un objeto SimpleDateFormat para dar formato a la fecha
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss"); // Creamos un objeto SimpleDateFormat para dar formato a la hora
+
+            String fechaFormateada = dateFormat.format(this.fecha); // Formateamos la fecha
+            String horaFormateada = timeFormat.format(this.hora); // Formateamos la hora
+            
             pstmt.setInt(1, this.id_factura); // Asignamos el id de la factura
-            pstmt.setDate(2, this.fecha); // Asignamos la fecha de la factura
-            pstmt.setTime(3, this.hora); // Asignamos la hora de la factura
+            pstmt.setString(2, fechaFormateada); // Asignamos la fecha de la factura
+            pstmt.setString(3, horaFormateada); // Asignamos la hora de la factura
+            //pstmt.setDate(2, this.fecha); // Asignamos la fecha de la factura
+            //pstmt.setTime(3, this.hora); // Asignamos la hora de la factura
             pstmt.setString(4, this.tipo); // Asignamos el tipo de la factura
             pstmt.setString(5, this.matricula); // Asignamos la matrícula del vehículo
             pstmt.setString(6, this.nombre); // Asignamos el nombre del cliente

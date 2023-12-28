@@ -19,8 +19,8 @@ public class menuFacturacion {
         Calendar calendar = Calendar.getInstance(); // Creamos un objeto Calendar para obtener la hora actual
         return new Time(calendar.getTimeInMillis()); // Devolvemos la hora actual
     }
-    public static void main(String[] args) {
-    //public static void iniciarMenu() { // Método para iniciar el menú de facturación
+    //public static void main(String[] args) {
+    public static void iniciarMenu() { // Método para iniciar el menú de facturación
         System.setProperty("file.encoding", "UTF-8"); // Establecemos la codificación de caracteres
         Scanner scanner = new Scanner(System.in); // Creamos un objeto Scanner para leer datos del usuario
         int opcion; // Variable para almacenar la opción seleccionada por el usuario
@@ -156,9 +156,10 @@ public class menuFacturacion {
     // Método para mostrar todas las facturas
     private static void mostrarFacturas() {
         System.out.println("=== Mostrar todas las facturas ===");
-
         Facturacion factura = new Facturacion(0, null, null, null, null, null, null, null, 0, null); // Creamos un objeto Facturacion con los datos introducidos por el usuario
-        factura.leer(); // Mostramos todas las facturas de la base de datos
+        String listaFacturas = factura.leer(); // Obtenemos todas las facturas de la base de datos
+        System.out.println(listaFacturas); // Mostramos todas las facturas de la base de datos
+        //factura.leer(); // Mostramos todas las facturas de la base de datos
     }
 
 }
