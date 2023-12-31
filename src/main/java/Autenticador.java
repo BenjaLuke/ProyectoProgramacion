@@ -77,8 +77,11 @@ public class Autenticador {
                         connection.close(); // Cerramos la conexión con la base de datos
                         // Lanzamos el menú de contable
                         menuFacturacion.iniciarMenu(); // Lanzamos el menú de facturación
-                    } else if (rolesUsuario.contains("Cliente")) {
-                        System.out.println("Redirigiendo a la pantalla de cliente...");
+                    } else if (rolesUsuario.contains("Jefe de almacén")) {
+                        System.out.println("Bienvenido Jefe de almacén");
+                        connection.close(); // Cerramos la conexión con la base de datos
+                        // Lanzamos el menú de jefe de almacén
+                        menuEmpaquetado.iniciarMenu(new String[] {});
                     } else {
                         System.out.println("El usuario no tiene roles asignados");
                     }
