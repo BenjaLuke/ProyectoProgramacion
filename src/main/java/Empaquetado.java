@@ -15,7 +15,7 @@ public class Empaquetado implements GestorDatos{
     private int numero_contenedores; // Número de contenedores
     private double peso; // Peso del empaquetado
     private double tamano; // Tamaño del empaquetado
-    // Otros atributos relacionados con el empaquetado
+    private double densidad; // Densidad del empaquetado
 
     // Constructor
     public Empaquetado(int id_empaquetado, int numero_contenedores, double peso, double tamano) {
@@ -23,8 +23,21 @@ public class Empaquetado implements GestorDatos{
         this.numero_contenedores = numero_contenedores; // Asignamos el número de contenedores
         this.peso = peso; // Asignamos el peso del empaquetado
         this.tamano = tamano; // Asignamos el tamaño del empaquetado
+        this.densidad = calcularDensidad(); // Calculamos la densidad del empaquetado
         
     }
+
+    // Método para calcular la densidad del empaquetado
+    public double calcularDensidad() {
+        if (tamano != 0) { // Comprobamos que el tamaño no sea 0
+            return peso / tamano; // Calculamos la densidad
+        } else {
+            //System.out.println("Error: el tamaño no puede ser 0. No se puede calcular la densidad.");
+            return 0; // Devolvemos 0
+        }
+        
+    }
+
 
     // Implementación de los métodos de la interfaz GestorDatos
     @Override
@@ -32,13 +45,15 @@ public class Empaquetado implements GestorDatos{
         SQLiteManager manager = new SQLiteManager("src/db/proyecto_logistica.db"); // Creamos un objeto SQLiteManager para conectarnos a la base de datos
 
         // Definimos la consulta SQL para crear un empaquetado
-        String sql = "INSERT INTO empaquetado (id_empaquetado, numero_contenedores, peso, tamano) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO empaquetado (id_empaquetado, numero_contenedores, peso, tamano, densidad) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = manager.getConnection().prepareStatement(sql)) { // Creamos el PreparedStatement para crear un empaquetado
             pstmt.setInt(1, this.id_empaquetado); // Asignamos el id del empaquetado
             pstmt.setInt(2, this.numero_contenedores); // Asignamos el número de contenedores
             pstmt.setDouble(3, this.peso); // Asignamos el peso del empaquetado
             pstmt.setDouble(4, this.tamano); // Asignamos el tamaño del empaquetado
+            double densidad = calcularDensidad(); // Obtenemos la densidad del empaquetado
+            pstmt.setDouble(5, densidad); // Asignamos la densidad del empaquetado
             pstmt.executeUpdate(); // Ejecutamos la consulta
 
             System.out.println("Empaquetado creado con éxito: " + this.id_empaquetado);
@@ -55,13 +70,15 @@ public class Empaquetado implements GestorDatos{
         SQLiteManager manager = new SQLiteManager("src/db/proyecto_logistica.db"); // Creamos un objeto SQLiteManager para conectarnos a la base de datos
 
         // Definimos la consulta SQL para modificar un empaquetado
-        String sql = "UPDATE empaquetado SET numero_contenedores = ?, peso = ?, tamano = ? WHERE id_empaquetado = ?";
+        String sql = "UPDATE empaquetado SET numero_contenedores = ?, peso = ?, tamano = ?, densidad = ? WHERE id_empaquetado = ?";
 
         try (PreparedStatement pstmt = manager.getConnection().prepareStatement(sql)) { // Creamos el PreparedStatement para modificar un empaquetado
             pstmt.setInt(1, this.numero_contenedores); // Asignamos el número de contenedores
             pstmt.setDouble(2, this.peso); // Asignamos el peso del empaquetado
             pstmt.setDouble(3, this.tamano); // Asignamos el tamaño del empaquetado
-            pstmt.setInt(4, this.id_empaquetado); // Asignamos el id del empaquetado
+            double densidad = calcularDensidad(); // Obtenemos la densidad del empaquetado
+            pstmt.setDouble(4, densidad); // Asignamos la densidad del empaquetado
+            pstmt.setInt(5, this.id_empaquetado); // Asignamos el id del empaquetado
             pstmt.executeUpdate(); // Ejecutamos la consulta
 
             System.out.println("Empaquetado modificado con éxito: " + this.id_empaquetado);
@@ -111,8 +128,9 @@ public class Empaquetado implements GestorDatos{
                 empaquetados.append("ID: ").append(rs.getInt("id_empaquetado")).append("\n");
                 empaquetados.append("Número de contenedores: ").append(rs.getInt("numero_contenedores")).append("\n");
                 empaquetados.append("Peso: ").append(rs.getDouble("peso")).append("\n");
-                empaquetados.append("Tamaño: ").append(rs.getDouble("tamano")).append("\n");
-                empaquetados.append("\n");                
+                empaquetados.append("Tamaño: ").append(rs.getDouble("tamano")).append("\n");   
+                double densidad = rs.getDouble("densidad"); // Obtenemos la densidad del empaquetado"));
+                empaquetados.append("Densidad: ").append(densidad).append("\n\n");
                 
             }
         } catch (SQLException e) {
@@ -125,16 +143,6 @@ public class Empaquetado implements GestorDatos{
 
     }
 
-    // Método para calcular la densidad del empaquetado
-    public double calcularDensidad() {
-        if (tamano != 0) { // Comprobamos que el tamaño no sea 0
-            return peso / tamano; // Calculamos la densidad
-        } else {
-            System.out.println("Error: el tamaño no puede ser 0. No se puede calcular la densidad.");
-            return 0; // Devolvemos 0
-        }
-        
-    }
 }
 
 

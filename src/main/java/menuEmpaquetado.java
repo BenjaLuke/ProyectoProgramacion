@@ -122,11 +122,4 @@ public class menuEmpaquetado {
         System.out.println(listaEmpaquetados); // Mostramos todos los empaquetados de la base de datos
     }
 
-    // Método para mostrar la densidad de un empaquetado
-    public static void mostrarDensidad(Empaquetado	empaquetado) {
-        System.out.println("=== Mostrar densidad ===");
-        double densidad = empaquetado.calcularDensidad(); // Calculamos la densidad del empaquetado
-        System.out.println("La densidad del empaquetado es: " + densidad); // Mostramos la densidad del empaquetado
-    }
-
 }
