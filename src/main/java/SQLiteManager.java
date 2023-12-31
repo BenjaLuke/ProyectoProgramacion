@@ -52,5 +52,16 @@ public class SQLiteManager {
             e.printStackTrace();
         }
     }
+
+    // Método para crear la tabla de empaquetado
+    public void createTableEmpaquetado(){
+        String sql = "CREATE TABLE IF NOT EXISTS empaquetado (id_empaquetado INTEGER PRIMARY KEY AUTOINCREMENT, numero_contenedores INTEGER NOT NULL, peso REAL NOT NULL, tamano REAL NOT NULL)";
+        try{
+            connection.createStatement().execute(sql);
+            System.out.println("Tabla empaquetado creada");
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
    
 }
