@@ -16,7 +16,9 @@ import java.util.ArrayList;
 public class menuRuta {    
 
     private static Scanner scanner = new Scanner(System.in); // Creamos un objeto Scanner para leer datos del usuario
-    public static void main(String[] args) {
+
+    public static void iniciarMenu() {
+    //public static void main(String[] args) {
 
         System.setProperty("file.encoding", "UTF-8"); // Establecemos la codificación de caracteres
         

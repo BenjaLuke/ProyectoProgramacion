@@ -82,6 +82,11 @@ public class Autenticador {
                         connection.close(); // Cerramos la conexión con la base de datos
                         // Lanzamos el menú de jefe de almacén
                         menuEmpaquetado.iniciarMenu(new String[] {});
+                    } else if (rolesUsuario.contains("Coordinador de rutas")) {
+                        System.out.println("Bienvenido coordinador de rutas");
+                        connection.close(); // Cerramos la conexión con la base de datos
+                        // Lanzamos el menú de coordinador de rutas
+                        menuRuta.iniciarMenu();
                     } else {
                         System.out.println("El usuario no tiene roles asignados");
                     }
