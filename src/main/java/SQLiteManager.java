@@ -1,6 +1,8 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 // Clase para manejar la conexion con la base de datos SQLite
 public class SQLiteManager {
@@ -63,5 +65,70 @@ public class SQLiteManager {
             e.printStackTrace();
         }
     }
+
+    // Método para crear la tabla de rutas
+    public void createTableRuta() {
+        String sql = "CREATE TABLE IF NOT EXISTS Ruta (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, tipoRuta TEXT, puertoOrigen TEXT, puertoDestino TEXT, fechaSalida DATE, fechaLlegada DATE, costeRuta INTEGER)";
+        try {
+            connection.createStatement().execute(sql);
+            System.out.println("Tabla Ruta creada");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para crear la tabla de rutas aéreas
+    public void createTableRutaAerea() {
+        String sql = "CREATE TABLE IF NOT EXISTS RutaAerea (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, altitudVuelo REAL, condicionesAtmosfericas TEXT, rutasVuelo TEXT)";
+        try {
+            connection.createStatement().execute(sql);
+            System.out.println("Tabla RutaAerea creada");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para crear la tabla de rutas terrestres
+    public void createTableRutaTerrestre() {
+        String sql = "CREATE TABLE IF NOT EXISTS RutaTerrestre (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, tipoTerreno TEXT, condicionesClimaticas TEXT, numeroPeajes INTEGER)";
+        try {
+            connection.createStatement().execute(sql);
+            System.out.println("Tabla RutaTerrestre creada");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para crear la tabla de rutas marítimas
+    public void createTableRutaMaritima() {
+        String sql = "CREATE TABLE IF NOT EXISTS RutaMaritima (idRuta INTEGER PRIMARY KEY AUTOINCREMENT, profundidadAgua INTEGER, condicionesMar TEXT, puertosIntermedios TEXT)";
+        try {
+            connection.createStatement().execute(sql);
+            System.out.println("Tabla RutaMaritima creada");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para verificar si existe idRuta en tabla ruta aérea
+    // public boolean existeIdRuta(int idRuta) {
+
+    //     boolean existe = false; // Variable para verificar si existe el id de la ruta
+
+    //     String sql = "SELECT COUNT (*) FROM RutaAerea WHERE idRuta = ?"; // Definimos la consulta SQL para verificar si existe el id de la ruta
+
+    //     try (PreparedStatement pstmt = connection.prepareStatement(sql)) { // Creamos el PreparedStatement para verificar si existe el id de la ruta
+    //         pstmt.setInt(1, idRuta); // Asignamos el id de la ruta
+    //         ResultSet rs = pstmt.executeQuery(); // Ejecutamos la consulta
+    //         int count = rs.getInt("count"); // Obtenemos el valor del contador
+    //         if (count > 0) { // Verificamos si existe el id de la ruta
+    //             existe = true; // Asignamos true a la variable existe
+    //         }
+    //     } catch (SQLException e) {
+    //         System.out.println("Error al verificar si existe el id de la ruta " + e.getMessage());
+    //     }
+    //     return existe; // Retornamos la variable existe
+    // }
+
    
 }
